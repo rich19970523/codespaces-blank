@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GD包網 - 一站式博弈平台建站專家</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background-image: url('https://placehold.co/1920x1080/1a202c/718096?text=高端運營場景');
+            background-size: cover;
+            background-position: center;
+        }
+        .cta-button {
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .section-title {
+            font-size: 2.25rem; /* text-4xl */
+            font-weight: 700; /* bold */
+            margin-bottom: 1.5rem; /* mb-6 */
+        }
+        .section-subtitle {
+            font-size: 1.125rem; /* text-lg */
+            color: #4A5568; /* text-gray-700 */
+            margin-bottom: 3rem; /* mb-12 */
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        .floating-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- 主容器 -->
+    <main>
+
+        <!-- 1. 首屏導入區 -->
+        <section id="section-1" class="hero-bg text-white min-h-screen flex flex-col items-center justify-center p-8 relative">
+            <div class="absolute inset-0 bg-black opacity-60"></div>
+            <div class="relative z-10 text-center space-y-8">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
+                    不懂架構、沒技術、缺團隊？<br class="hidden md:block">GD包網，從0到1助您輕鬆開站！
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto">
+                    技術穩定 × 金流完善 × 成果導向，專為中國市場量身打造，快速交付、極速上線，助您搶佔紅利先機！
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a href="#section-13" class="cta-button bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg text-lg shadow-lg">
+                        立即洽詢，啟動您的品牌
+                    </a>
+                    <a href="#section-2" class="cta-button bg-gray-700 hover:bg-gray-800 text-white font-semibold py-3 px-8 rounded-lg text-lg shadow-lg">
+                        預約專人介紹
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. 品牌價值與系統概覽區 -->
+        <section id="section-2" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title text-gray-900">深耕市場，實力鑄就信賴</h2>
+                <p class="section-subtitle">超過百個品牌選擇GD，只因我們系統穩、服務快、金流通！</p>
+                <div class="max-w-4xl mx-auto text-left text-lg text-gray-700 space-y-6 mb-12">
+                    <p>GD包網自2015年成立以來，始終專注於博弈系統的研發與創新。我們的核心技術團隊源自中美頂尖互聯網企業，憑藉深厚的工程實力與超過百個成功平台的實戰經驗，為您的品牌構建堅若磐石的運營基石。我們不僅是建站服務商，更是您長期穩定營運的可靠夥伴。</p>
+                </div>
+                <div class="grid md:grid-cols-4 gap-8 text-center">
+                    <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+                        <div class="text-blue-600 text-4xl mb-3"><i class="fas fa-calendar-alt"></i></div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">2015年創立</h3>
+                        <p class="text-gray-600">9年行業深耕，經驗豐富</p>
+                    </div>
+                    <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+                        <div class="text-blue-600 text-4xl mb-3"><i class="fas fa-check-circle"></i></div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">100+成功案例</h3>
+                        <p class="text-gray-600">服務超百平台，實力見證</p>
+                    </div>
+                    <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+                        <div class="text-blue-600 text-4xl mb-3"><i class="fas fa-users-cog"></i></div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">頂尖技術團隊</h3>
+                        <p class="text-gray-600">中美互聯網背景，技術領先</p>
+                    </div>
+                    <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+                        <div class="text-blue-600 text-4xl mb-3"><i class="fas fa-shield-alt"></i></div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">穩定安全保障</h3>
+                        <p class="text-gray-600">聚焦穩定性、擴展性與安全性</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 三大服務核心優勢區 -->
+        <section id="section-3" class="py-16 md:py-24 bg-gray-100">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title text-gray-900">穩、通、美，打造卓越平台體驗</h2>
+                <p class="section-subtitle">技術穩、金流全、UI美，三大核心優勢一次搞定！</p>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-300">
+                        <div class="text-4xl mb-6 text-center"><i class="fas fa-server text-blue-700"></i></div>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-3 text-center">技術穩定</h3>
+                        <p class="text-gray-600 text-center text-sm mb-2 font-medium">全年99.99%穩定，後顧無憂</p>
+                        <p class="text-gray-600 text-left">採用企業級私有雲架構，具備高彈性與高可用性，保障您的平台全年持續穩定運行，從容應對業務高峰。</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-300">
+                        <div class="text-4xl mb-6 text-center"><i class="fas fa-coins text-yellow-500"></i></div>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-3 text-center">金流整合</h3>
+                        <p class="text-gray-600 text-center text-sm mb-2 font-medium">主流支付，一鍵串接</p>
+                        <p class="text-gray-600 text-left">無縫整合業界主流支付渠道與USDT等加密貨幣，支持多種支付方式，確保資金流轉暢通無阻，收款無憂。</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-300">
+                        <div class="text-4xl mb-6 text-center"><i class="fas fa-palette text-purple-600"></i></div>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-3 text-center">視覺彈性</h3>
+                        <p class="text-gray-600 text-center text-sm mb-2 font-medium">百變風格，隨心定制</p>
+                        <p class="text-gray-600 text-left">提供多款精選UI模板，支持自訂LOGO、配色方案與主題風格，深度客製化，打造獨一無二的品牌專屬視覺。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. 平台功能總覽區 -->
+        <section id="section-4" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title text-gray-900">強大後台，運營化繁為簡</h2>
+                <p class="section-subtitle">全模組支援，一個後台搞定所有營運操作！後台設計貼近用戶習慣，降低學習曲線，即使非技術人員也能快速上手，支援多角色協同管理，操作效率提升50%！</p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- 功能點範例，可以複製增加 -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md flex items-start space-x-4">
+                        <div class="text-3xl text-blue-600 pt-1"><i class="fas fa-gift"></i></div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">紅利模組</h3>
+                            <p class="text-gray-600">多樣化紅利活動，靈活配置</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md flex items-start space-x-4">
+                        <div class="text-3xl text-blue-600 pt-1"><i class="fas fa-users"></i></div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">會員分層</h3>
+                            <p class="text-gray-600">精細化用戶管理，提升留存</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md flex items-start space-x-4">
+                        <div class="text-3xl text-blue-600 pt-1"><i class="fas fa-sitemap"></i></div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">代理管理</h3>
+                            <p class="text-gray-600">無限層級代理，高效拓客</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md flex items-start space-x-4">
+                        <div class="text-3xl text-blue-600 pt-1"><i class="fas fa-chart-line"></i></div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">數據報表</h3>
+                            <p class="text-gray-600">即時數據追蹤，驅動決策</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md flex items-start space-x-4">
+                        <div class="text-3xl text-blue-600 pt-1"><i class="fas fa-user-shield"></i></div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">權限控管</h3>
+                            <p class="text-gray-600">多角色權限，安全便捷</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md flex items-start space-x-4">
+                        <div class="text-3xl text-blue-600 pt-1"><i class="fas fa-cogs"></i></div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">風控系統</h3>
+                            <p class="text-gray-600">智能風險識別，保障安全</p>
+                        </div>
+                    </div>
+                </div>
+                 <img src="https://placehold.co/1200x600/e2e8f0/4a5568?text=平台後台截圖示意" alt="平台後台截圖示意" class="mt-12 rounded-lg shadow-xl mx-auto">
+            </div>
+        </section>
+
+        <!-- 5. 合作方案比較區 -->
+        <section id="section-5" class="py-16 md:py-24 bg-gray-100">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title text-gray-900">明智之選，全托管省心省力</h2>
+                <p class="section-subtitle">還在為分段合作、多方對接而煩惱？GD包網提供真正全托管解決方案，從平台搭建、金流配置、活動策劃到技術支持，我們為您一次搞定，讓您專注核心業務，輕鬆實現快速上線！</p>
+                <h3 class="text-2xl font-semibold mb-8 text-gray-800">不必選了，GD包網全托管，我們全都幫你做完！</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full max-w-4xl mx-auto table-auto border-collapse border border-gray-300 shadow-lg rounded-lg">
+                        <thead>
+                            <tr class="bg-gray-200 text-gray-700 uppercase text-sm leading-normal">
+                                <th class="py-3 px-4 border border-gray-300">項目</th>
+                                <th class="py-3 px-4 border border-gray-300">其他標準包</th>
+                                <th class="py-3 px-4 border border-gray-300">其他全托管</th>
+                                <th class="py-3 px-4 border border-blue-500 bg-blue-100">GD包網全托管</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-700 text-sm font-light">
+                            <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                <td class="py-3 px-4 border border-gray-300">建站交付</td>
+                                <td class="py-3 px-4 border border-gray-300 text-center">✅</td>
+                                <td class="py-3 px-4 border border-gray-300 text-center">✅</td>
+                                <td class="py-3 px-4 border border-blue-500 text-center font-semibold text-blue-700">✅ 一站極速完成</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                <td class="py-3 px-4 border border-gray-300">金流串接</td>
+                                <td class="py-3 px-4 border border-gray-300 text-center">✅</td>
+                                <td class="py-3 px-4 border border-gray-300 text-center">✅</td>
+                                <td class="py-3 px-4 border border-blue-500 text-center font-semibold text-blue-700">✅ 多通道整合，即刻啟用</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                <td class="py-3 px-4 border border-gray-300">活動設計支援</td>
+                                <td class="py-3 px-4 border border-gray-300 text-center">⛔ (需自行設計)</td>
+                                <td class="py-3 px-4 border border-gray-300 text-center">✅ (有限模板)</td>
+                                <td class="py-3 px-4 border border-blue-500 text-center font-semibold text-blue-700">✅ 自帶多樣模塊，高效支援</td>
+                            </tr>
+                            <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                <td class="py-3 px-4 border border-gray-300">客服協助</td>
+                                <td class="py-3 px-4 border border-gray-300 text-center">⛔ (需自行組建)</td>
+                                <td class="py-3 px-4 border border-gray-300 text-center">✅ (基礎培訓)</td>
+                                <td class="py-3 px-4 border border-blue-500 text-center font-semibold text-blue-700">✅ 專業培訓，疑難解答</td>
+                            </tr>
+                             <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                <td class="py-3 px-4 border border-gray-300">維護更新</td>
+                                <td class="py-3 px-4 border border-gray-300 text-center">⚠️ (部分自理)</td>
+                                <td class="py-3 px-4 border border-gray-300 text-center">✅ (標準維護)</td>
+                                <td class="py-3 px-4 border border-blue-500 text-center font-semibold text-blue-700">✅ 全年無休，主動升級</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="py-3 px-4 border border-gray-300 font-semibold">適合對象</td>
+                                <td class="py-3 px-4 border border-gray-300">有經驗，部分自理</td>
+                                <td class="py-3 px-4 border border-gray-300">無自營團隊</td>
+                                <td class="py-3 px-4 border border-blue-500 font-semibold text-blue-700">所有想快速上線、專注盈利者</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mt-12">
+                    <a href="#section-13" class="cta-button bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg text-lg">
+                        立即預約諮詢，獲取專屬方案
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. UI模板展示 + 客製化設計支援區 -->
+        <section id="section-6" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title text-gray-900">打造您的專屬品牌門面</h2>
+                <p class="section-subtitle">多款主流模板，風格自選；深度客製，彰顯品牌個性！UI不是簡單的包裝，而是品牌給用戶的第一印象。我們提供從精選模板到完全自訂的彈性選擇，支持跨裝置視覺一致性，助您打造令人過目不忘的品牌體驗。</p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- 模板範例 -->
+                    <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
+                        <img src="https://placehold.co/600x400/374151/e5e7eb?text=歐美風模板 (PC)" alt="歐美風模板" class="w-full h-48 object-cover">
+                        <img src="https://placehold.co/300x500/374151/e5e7eb?text=歐美風 (Mobile)" alt="歐美風模板 Mobile" class="w-1/2 h-64 object-cover mx-auto mt-2 sm:hidden">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">歐美風｜暗底亮字</h3>
+                            <p class="text-gray-600">科技動感，高端大氣，適合追求國際化風格的品牌。</p>
+                            <p class="text-sm text-blue-600 mt-3 font-medium">可自訂LOGO、配色、模塊</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
+                        <img src="https://placehold.co/600x400/f3f4f6/374151?text=商務型模板 (PC)" alt="商務型模板" class="w-full h-48 object-cover">
+                         <img src="https://placehold.co/300x500/f3f4f6/374151?text=商務型 (Mobile)" alt="商務型模板 Mobile" class="w-1/2 h-64 object-cover mx-auto mt-2 sm:hidden">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">商務型｜淺底深字</h3>
+                            <p class="text-gray-600">簡約專業，穩重可靠，適合注重信任感的企業品牌。</p>
+                             <p class="text-sm text-blue-600 mt-3 font-medium">快速套用，跨裝置視覺統一</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
+                        <img src="https://placehold.co/600x400/fffbeb/b45309?text=亞洲風模板 (PC)" alt="亞洲風模板" class="w-full h-48 object-cover">
+                        <img src="https://placehold.co/300x500/fffbeb/b45309?text=亞洲風 (Mobile)" alt="亞洲風模板 Mobile" class="w-1/2 h-64 object-cover mx-auto mt-2 sm:hidden">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">亞洲風｜暖色點綴</h3>
+                            <p class="text-gray-600">親和舒適，文化共鳴，適合針對亞洲市場的品牌。</p>
+                            <p class="text-sm text-blue-600 mt-3 font-medium">字型風格，彈性調整</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. 技術支援與系統穩定保障區 -->
+        <section id="section-7" class="py-16 md:py-24 bg-gray-900 text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title">堅實後盾，保障您的業務持續領先</h2>
+                <p class="section-subtitle !text-gray-300">您的穩定運營，我們的技術承諾！專業團隊，全年無休保駕護航。</p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-md flex items-start space-x-4">
+                        <div class="text-3xl text-blue-400 pt-1"><i class="fas fa-headset"></i></div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-white mb-2">365天無休維運</h3>
+                            <p class="text-gray-400">專業團隊隨時待命，快速響應。</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-md flex items-start space-x-4">
+                        <div class="text-3xl text-blue-400 pt-1"><i class="fas fa-database"></i></div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-white mb-2">企業級主機備援</h3>
+                            <p class="text-gray-400">雙主機架構，數據安全無虞。</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-md flex items-start space-x-4">
+                        <div class="text-3xl text-blue-400 pt-1"><i class="fas fa-fighter-jet"></i></div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-white mb-2">全球CDN加速</h3>
+                            <p class="text-gray-400">極速加載體驗，用戶不流失。</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-md flex items-start space-x-4">
+                        <div class="text-3xl text-blue-400 pt-1"><i class="fas fa-shield-virus"></i></div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-white mb-2">多層防火牆防護</h3>
+                            <p class="text-gray-400">有效抵禦DDoS、CC等常見攻擊。</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-md flex items-start space-x-4">
+                        <div class="text-3xl text-blue-400 pt-1"><i class="fas fa-ban"></i></div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-white mb-2">智能防跳轉機制</h3>
+                            <p class="text-gray-400">保障您的域名安全，流量不被劫持。</p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-md flex items-start space-x-4">
+                        <div class="text-3xl text-blue-400 pt-1"><i class="fas fa-sync-alt"></i></div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-white mb-2">持續更新與優化</h3>
+                            <p class="text-gray-400">系統功能與安全策略與時俱進。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. 金流通道與多幣種支援區 -->
+        <section id="section-8" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title text-gray-900">全球支付暢通，業務拓展無界</h2>
+                <p class="section-subtitle">金流卡關 = 營運卡關？GD包網助您打通全球支付任督二脈！我們已為您整合多國主流支付渠道及本地化支付方案，支援多種法定貨幣與加密貨幣（如USDT），幣種配置靈活，匯率自動更新，助您輕鬆拓展全球市場。</p>
+                <div class="flex flex-wrap justify-center items-center gap-8 mb-12">
+                    <div class="text-center p-4 bg-gray-100 rounded-lg shadow-sm w-36">
+                        <i class="fab fa-cc-visa text-5xl text-blue-700 mb-2"></i>
+                        <p class="text-sm font-medium">信用卡</p>
+                    </div>
+                    <div class="text-center p-4 bg-gray-100 rounded-lg shadow-sm w-36">
+                        <i class="fab fa-bitcoin text-5xl text-yellow-500 mb-2"></i>
+                        <p class="text-sm font-medium">加密貨幣 (USDT)</p>
+                    </div>
+                     <div class="text-center p-4 bg-gray-100 rounded-lg shadow-sm w-36">
+                        <i class="fas fa-qrcode text-5xl text-green-500 mb-2"></i>
+                        <p class="text-sm font-medium">掃碼支付</p>
+                    </div>
+                    <div class="text-center p-4 bg-gray-100 rounded-lg shadow-sm w-36">
+                        <i class="fas fa-landmark text-5xl text-indigo-500 mb-2"></i>
+                        <p class="text-sm font-medium">本地銀行</p>
+                    </div>
+                    <div class="text-center p-4 bg-gray-100 rounded-lg shadow-sm w-36">
+                        <i class="fas fa-wallet text-5xl text-purple-500 mb-2"></i>
+                        <p class="text-sm font-medium">第三方支付</p>
+                    </div>
+                </div>
+                <p class="text-lg text-gray-700 font-semibold">亮點：可自定義支付層級｜可擴展新通道｜自動結算｜報表清晰</p>
+                <img src="https://placehold.co/1000x500/e0f2fe/0ea5e9?text=全球支付網絡示意圖" alt="全球支付網絡示意圖" class="mt-12 rounded-lg shadow-xl mx-auto">
+            </div>
+        </section>
+
+        <!-- 9. 後台管理與數據報表區 -->
+        <section id="section-9" class="py-16 md:py-24 bg-gray-100">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title text-gray-900">運籌帷幄，數據驅動精準決策</h2>
+                <p class="section-subtitle">報表即時看，權限清晰管，操作極簡便！不懂技術也能輕鬆管好站。</p>
+                 <img src="https://placehold.co/1200x700/e2e8f0/4a5568?text=後台管理儀表板模擬圖" alt="後台管理儀表板模擬圖" class="mb-12 rounded-lg shadow-xl mx-auto">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2"><i class="fas fa-tachometer-alt mr-2"></i>全模組數據儀表板</h3>
+                        <p class="text-gray-600">營運核心數據一目了然，支持自訂關鍵指標。</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2"><i class="fas fa-user-friends mr-2"></i>精細化會員分析</h3>
+                        <p class="text-gray-600">用戶畫像、行為軌跡、LTV全掌握。</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2"><i class="fas fa-money-check-alt mr-2"></i>實時金流追蹤</h3>
+                        <p class="text-gray-600">每一筆存提款記錄清晰可查，資金流向全透明。</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2"><i class="fas fa-chart-pie mr-2"></i>代理業績報表</h3>
+                        <p class="text-gray-600">各級代理貢獻、分潤自動統計。</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2"><i class="fas fa-user-lock mr-2"></i>多維度權限配置</h3>
+                        <p class="text-gray-600">站長、客服、財務、代理，各司其職，安全高效。</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-2"><i class="fas fa-mobile-alt mr-2"></i>移動端同步管理</h3>
+                        <p class="text-gray-600">主管即使出差在外，也能隨時通過手機掌握運營動態。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. 市場拓展與代理招商支持區 -->
+        <section id="section-10" class="py-16 md:py-24 bg-orange-500 text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title">不止建站，更助您贏在起跑線</h2>
+                <p class="section-subtitle !text-orange-100">幫您快速架站，更要強力助您招商拓客！開站只是第一步，成功運營離不開持續的市場拓展。GD包網深諳此道，為您提供的不僅是頂級系統，更有全方位的市場拓展與代理招商支持，讓您的人氣與財氣同步增長！</p>
+                <img src="https://placehold.co/1000x500/fed7aa/9a3412?text=代理招商支持流程圖" alt="代理招商支持流程圖" class="mb-12 rounded-lg shadow-xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8 text-left">
+                    <div class="bg-orange-600 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-2"><i class="fas fa-network-wired mr-2"></i>內建強大代理系統</h3>
+                        <p class="text-orange-100">無限層級發展，自訂分潤比例，推廣鏈接一鍵生成，業績追蹤清晰。</p>
+                    </div>
+                    <div class="bg-orange-600 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-2"><i class="fas fa-file-alt mr-2"></i>提供全套招商素材</h3>
+                        <p class="text-orange-100">精美推廣圖文、標準話術腳本、成功案例分享。</p>
+                    </div>
+                    <div class="bg-orange-600 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-2"><i class="fas fa-lightbulb mr-2"></i>專業招商流程建議</h3>
+                        <p class="text-orange-100">從策略制定到團隊培訓，助您快速啟動。</p>
+                    </div>
+                    <div class="bg-orange-600 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-2"><i class="fas fa-bullhorn mr-2"></i>行銷活動模塊</h3>
+                        <p class="text-orange-100">豐富的行銷工具，助力代理高效轉化。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. 客戶成功與品牌案例區 -->
+        <section id="section-11" class="py-16 md:py-24 bg-gray-800 text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title">百家之選，口碑見證實力</h2>
+                <p class="section-subtitle !text-gray-300">超過100個品牌的共同選擇，他們的成功，您也可以複製！</p>
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                     <!-- 案例範例 -->
+                    <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
+                        <img src="https://placehold.co/100x100/4a5568/e2e8f0?text=品牌LOGO+A" alt="品牌LOGO A" class="w-20 h-20 mx-auto rounded-full mb-4 border-2 border-blue-400">
+                        <h3 class="text-xl font-semibold mb-2">新晉中國市場平台</h3>
+                        <p class="text-sm text-gray-400 mb-3">缺乏技術積累，GD助其2個月內穩定上線，首季度盈利超預期！</p>
+                        <p class="text-gray-300 italic">"選擇GD包網是我們最正確的決定，系統穩定，服務響應快！" - 王總</p>
+                    </div>
+                     <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
+                        <img src="https://placehold.co/100x100/4a5568/e2e8f0?text=品牌LOGO+B" alt="品牌LOGO B" class="w-20 h-20 mx-auto rounded-full mb-4 border-2 border-blue-400">
+                        <h3 class="text-xl font-semibold mb-2">東南亞拓展集團</h3>
+                        <p class="text-sm text-gray-400 mb-3">多語言多幣種需求，GD提供高度客製化方案，市場反響熱烈。</p>
+                        <p class="text-gray-300 italic">"GD的系統擴展性強，完美適配我們的海外業務。" - 李經理</p>
+                    </div>
+                     <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
+                        <img src="https://placehold.co/100x100/4a5568/e2e8f0?text=品牌LOGO+C" alt="品牌LOGO C" class="w-20 h-20 mx-auto rounded-full mb-4 border-2 border-blue-400">
+                        <h3 class="text-xl font-semibold mb-2">老牌娛樂公司轉型</h3>
+                        <p class="text-sm text-gray-400 mb-3">尋求線上突破，GD提供全方位技術與運營指導，成功轉型。</p>
+                        <p class="text-gray-300 italic">"感謝GD團隊的專業支持，讓我們少走了很多彎路。" - 陳董</p>
+                    </div>
+                </div>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <span class="bg-blue-500 text-white text-sm font-medium mr-2 px-3 py-1 rounded-full">平均21天快速上線</span>
+                    <span class="bg-green-500 text-white text-sm font-medium mr-2 px-3 py-1 rounded-full">客戶續約率95%</span>
+                    <span class="bg-yellow-500 text-black text-sm font-medium px-3 py-1 rounded-full">助力客戶3個月實現盈利</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 12. 常見問題 Q&A 區 -->
+        <section id="section-12" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-gray-900 text-center">您的疑慮，我們早已洞悉</h2>
+                <p class="section-subtitle text-center">還有疑問？一分鐘快速了解GD包網</p>
+                <div class="max-w-3xl mx-auto space-y-6">
+                    <details class="bg-gray-50 p-6 rounded-lg shadow-sm group">
+                        <summary class="flex justify-between items-center font-semibold text-lg text-gray-800 cursor-pointer">
+                            我不是技術人員，也能操作GD包網的後台系統嗎？
+                            <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="text-gray-600 mt-4">絕對可以！GD包網的後台界面設計直觀簡潔，操作邏輯清晰易懂。我們還提供詳細的教學視頻和中文客服團隊輔助，確保您能快速上手，無技術背景也能輕鬆管理。</p>
+                    </details>
+                    <details class="bg-gray-50 p-6 rounded-lg shadow-sm group">
+                        <summary class="flex justify-between items-center font-semibold text-lg text-gray-800 cursor-pointer">
+                            我擔心金流問題，例如無法收款或資金被凍結怎麼辦？
+                             <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="text-gray-600 mt-4">GD包網已整合多家穩定可靠的主流金流平台，並支持多種支付方式。您可以根據自身需求靈活切換和配置收款錢包，最大程度保障您的資金安全與收款效率。</p>
+                    </details>
+                    <details class="bg-gray-50 p-6 rounded-lg shadow-sm group">
+                        <summary class="flex justify-between items-center font-semibold text-lg text-gray-800 cursor-pointer">
+                            平台開站後，GD包網還會提供後續的技術支援和服務嗎？
+                             <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="text-gray-600 mt-4">當然！我們提供全年無休的專業技術團隊支持，並為每位客戶建立專屬的運營溝通群組。無論是日常維護、緊急故障排除還是功能升級，我們都將提供持續、快速的支援服務。</p>
+                    </details>
+                    <details class="bg-gray-50 p-6 rounded-lg shadow-sm group">
+                        <summary class="flex justify-between items-center font-semibold text-lg text-gray-800 cursor-pointer">
+                            我可以先試用或者看看實際的演示（Demo）嗎？
+                             <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
+                        </summary>
+                        <p class="text-gray-600 mt-4">非常歡迎！您可以聯繫我們的商務顧問，我們將很樂意為您安排一次詳細的線上產品演示（Demo）。屆時您可以親身體驗GD包網的各項功能和便捷操作，全面了解我們的系統。</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- 13. 立即洽詢 + CTA 引導區 -->
+        <section id="section-13" class="py-16 md:py-24 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title">把握機會，即刻開啟您的財富之路！</h2>
+                <p class="section-subtitle !text-blue-100">系統好不好，用過才知道！立即行動，讓GD包網助您事業騰飛！無壓力諮詢，無隱藏費用，現在就留下您的聯繫方式，我們的資深商務顧問將在第一時間與您聯繫，為您量身定制專屬的合作方案，並提供系統演示。</p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-12">
+                    <a href="#" class="cta-button bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-4 px-10 rounded-lg text-xl shadow-xl">
+                        <i class="fas fa-comments mr-2"></i>立即免費諮詢
+                    </a>
+                    <a href="#" class="cta-button bg-gray-100 hover:bg-gray-200 text-indigo-700 font-bold py-4 px-10 rounded-lg text-xl shadow-xl">
+                        <i class="fas fa-desktop mr-2"></i>預約產品演示
+                    </a>
+                </div>
+                <div class="max-w-4xl mx-auto bg-white bg-opacity-10 p-8 rounded-lg shadow-xl">
+                    <h3 class="text-2xl font-semibold mb-6">透過以下任一方式與我們聯繫：</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+                        <div class="flex items-center space-x-3 p-3 bg-white bg-opacity-20 rounded-md">
+                            <i class="fab fa-telegram-plane text-3xl text-sky-300"></i>
+                            <div>
+                                <p class="font-semibold">商務Telegram</p>
+                                <p class="text-sm break-all">@GDBWRX01</p>
+                                <img src="https://placehold.co/100x100/ffffff/3b82f6?text=TG+QR" alt="Telegram QR Code" class="w-16 h-16 mt-1 rounded">
+                            </div>
+                        </div>
+                         <div class="flex items-center space-x-3 p-3 bg-white bg-opacity-20 rounded-md">
+                            <i class="fab fa-facebook text-3xl text-blue-300"></i>
+                            <div>
+                                <p class="font-semibold">Facebook</p>
+                                <p class="text-sm break-all">Gdsw Kennedy</p>
+                                <img src="https://placehold.co/100x100/ffffff/60a5fa?text=FB+QR" alt="Facebook QR Code" class="w-16 h-16 mt-1 rounded">
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3 p-3 bg-white bg-opacity-20 rounded-md">
+                            <i class="fab fa-whatsapp text-3xl text-green-300"></i>
+                            <div>
+                                <p class="font-semibold">WhatsApp</p>
+                                <p class="text-sm break-all">+855 762525843</p>
+                                <img src="https://placehold.co/100x100/ffffff/4ade80?text=WA+QR" alt="WhatsApp QR Code" class="w-16 h-16 mt-1 rounded">
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3 p-3 bg-white bg-opacity-20 rounded-md">
+                            <i class="fab fa-skype text-3xl text-cyan-300"></i>
+                            <div>
+                                <p class="font-semibold">Skype</p>
+                                <p class="text-sm break-all">live:.cid.27b73934cb9812c8</p>
+                                <img src="https://placehold.co/100x100/ffffff/22d3ee?text=SKYPE+QR" alt="Skype QR Code" class="w-16 h-16 mt-1 rounded">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <p class="mt-8 text-sm text-blue-200">現在諮詢，前10位簽約客戶即享價值万元的【豪華推廣大禮包】！</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 頁尾 -->
+    <footer class="bg-gray-900 text-gray-400 py-8 text-center">
+        <div class="container mx-auto px-6">
+            <p>&copy; <span id="currentYear"></span> GD包網 版權所有。</p>
+            <p class="text-sm mt-1">本服務僅面向合法合規運營的商業實體。</p>
+        </div>
+    </footer>
+    
+    <!-- 固定浮動CTA按鈕 -->
+    <div class="floating-cta">
+        <a href="#section-13" class="cta-button bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold p-4 rounded-full shadow-xl flex items-center justify-center w-16 h-16 text-2xl">
+            <i class="fas fa-comments"></i>
+        </a>
+    </div>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
+
