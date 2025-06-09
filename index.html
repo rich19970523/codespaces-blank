@@ -50,9 +50,19 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
         }
 
-        /* Accordion transition for max-height */
-        .accordion-content {
-            transition: max-height 0.5s ease-in-out;
+        /* Modal specific styles for fade-in effect */
+        .modal-enter-active, .modal-leave-active {
+          transition: opacity 0.3s ease;
+        }
+        .modal-enter-from, .modal-leave-to {
+          opacity: 0;
+        }
+        .modal-content-enter-active, .modal-content-leave-active {
+            transition: transform 0.3s ease, opacity 0.3s ease; /* Added opacity to content transition for smoother fade */
+        }
+        .modal-content-enter-from, .modal-content-leave-to {
+            transform: translateY(20px);
+            opacity: 0; /* Ensures content also fades with slide */
         }
     </style>
 </head>
@@ -72,8 +82,7 @@
                 <a href="#home" class="text-gray-600 hover:text-primary-red text-lg font-medium transition-colors duration-300">首页</a>
                 <a href="#features" class="text-gray-600 hover:text-primary-red text-lg font-medium transition-colors duration-300">功能</a>
                 <a href="#download" class="text-gray-600 hover:text-primary-red text-lg font-medium transition-colors duration-300">下载</a>
-                <a href="#privacy" class="text-gray-600 hover:text-primary-red text-lg font-medium transition-colors duration-300">隐私政策</a>
-                <a href="#terms" class="text-gray-600 hover:text-primary-red text-lg font-medium transition-colors duration-300">服务条款</a>
+                <a href="#about-us" class="text-gray-600 hover:text-primary-red text-lg font-medium transition-colors duration-300">关于我们</a>
             </div>
             <!-- 移动端菜单按钮 -->
             <div class="md:hidden">
@@ -89,8 +98,7 @@
             <a href="#home" class="block px-6 py-3 text-gray-800 hover:bg-gray-100 transition-colors duration-300">首页</a>
             <a href="#features" class="block px-6 py-3 text-gray-800 hover:bg-gray-100 transition-colors duration-300">功能</a>
             <a href="#download" class="block px-6 py-3 text-gray-800 hover:bg-gray-100 transition-colors duration-300">下载</a>
-            <a href="#privacy" class="block px-6 py-3 text-gray-800 hover:bg-gray-100 transition-colors duration-300">隐私政策</a>
-            <a href="#terms" class="block px-6 py-3 text-gray-800 hover:bg-gray-100 transition-colors duration-300">服务条款</a>
+            <a href="#about-us" class="block px-6 py-3 text-gray-800 hover:bg-gray-100 transition-colors duration-300">关于我们</a>
         </div>
     </header>
 
@@ -255,146 +263,33 @@
         </div>
     </section>
 
-    <!-- 隐私政策区 -->
-    <section id="privacy" class="py-12 md:py-16 bg-white rounded-xl shadow-lg my-5">
+    <!-- 关于我们按钮区域 -->
+    <section id="about-us" class="py-8 md:py-10 bg-white rounded-xl shadow-lg my-5">
         <div class="container mx-auto px-6 max-w-5xl">
-            <!-- 隐私政策标题和切换按钮 -->
-            <button id="privacy-toggle" class="w-full flex items-center justify-between text-4xl font-bold text-gray-900 mb-6 cursor-pointer bg-gray-50 p-6 rounded-lg shadow-md hover:bg-gray-100 transition-colors duration-300">
-                <span>隐私政策</span>
-                <svg id="privacy-icon" class="w-8 h-8 text-primary-red transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-            </button>
-            <!-- 隐私政策内容 (初始隐藏) -->
-            <div id="privacy-content" class="accordion-content max-h-0 overflow-hidden">
-                <div class="prose max-w-none text-gray-700 leading-relaxed text-lg pt-4 pb-4">
-                    <p>
-                        未来浏览器（“我们”、“我们的”）致力于保护您的隐私。本隐私政策解释了当您使用我们的浏览器产品和服务时，我们如何收集、使用、披露和保护您的信息。
-                    </p>
-                    <h3>我们收集的信息</h3>
-                    <p>
-                        当您使用未来浏览器时，我们不会收集您的个人身份信息，除非您明确选择与我们共享这些信息（例如，通过报告问题或参与可选的调查）。我们可能收集非个人身份信息，例如：
-                    </p>
-                    <ul>
-                        <li><strong>技术数据：</strong> 您的设备类型、操作系统版本、浏览器版本（仅限未来浏览器版本）、崩溃报告（匿名化，不包含个人数据）。</li>
-                        <li><strong>使用数据：</strong> 匿名化的功能使用统计，旨在改进浏览器性能和用户体验。这些数据无法追溯到任何特定用户。</li>
-                    </ul>
-                    <h3>我们不收集的信息</h3>
-                    <p>
-                        未来浏览器设计旨在最大程度地保护您的隐私。我们<strong>不</strong>收集以下信息：
-                    </p>
-                    <ul>
-                        <li>您的浏览历史记录</li>
-                        <li>您的搜索查询</li>
-                        <li>您访问的网站</li>
-                        <li>您的个人身份信息，如姓名、电子邮件地址或IP地址（除非在法律要求下或您明确同意）</li>
-                        <li>您在网站上输入的内容</li>
-                    </ul>
-                    <h3>我们如何使用信息</h3>
-                    <p>
-                        我们收集的匿名信息仅用于以下目的：
-                    </p>
-                    <ul>
-                        <li>改进和优化未来浏览器的性能、稳定性和安全性。</li>
-                        <li>开发新功能和改进现有功能。</li>
-                        <li>理解和分析用户趋势（总计数据），以更好地服务用户。</li>
-                    </ul>
-                    <h3>信息共享与披露</h3>
-                    <p>
-                        我们不会出售、出租或以其他方式与第三方共享您的个人身份信息。我们可能在以下情况下披露非个人身份聚合数据：
-                    </p>
-                    <ul>
-                        <li><strong>服务提供商：</strong> 我们可能与信任的第三方服务提供商合作，他们为我们提供技术支持、分析服务等，并且他们被要求保护您的信息并仅按照我们的指示使用。</li>
-                        <li><strong>法律要求：</strong> 如果法律要求或为了遵守法律程序，我们可能披露信息。</li>
-                    </ul>
-                    <h3>您的权利</h3>
-                    <p>
-                        作为未来浏览器的用户，您拥有以下权利：
-                    </p>
-                    <ul>
-                        <li>访问和请求我们持有的关于您的任何非个人身份信息的副本。</li>
-                        <li>请求更正任何不准确的信息。</li>
-                        <li>请求删除您的信息（如果适用且可能）。</li>
-                    </ul>
-                    <h3>政策变更</h3>
-                    <p>
-                        我们可能会不时更新本隐私政策。任何更改都将在本页面发布，并通过浏览器内通知（如果适用）告知。建议您定期查看本页面以了解任何更新。
-                    </p>
-                    <h3>联系我们</h3>
-                    <p>
-                        如果您对本隐私政策有任何疑问，请通过 [您的支持邮箱，例如：support@futurebrowser.com] 与我们联系。
-                    </p>
-                </div>
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-8">关于我们</h2>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <!-- 隐私政策按钮 -->
+                <button id="privacy-policy-open-modal" class="flex-1 flex items-center justify-center text-xl font-bold text-gray-900 cursor-pointer bg-white p-5 rounded-lg shadow-md hover:bg-gray-100 transition-colors duration-300 border-b-2 border-primary-red">
+                    <span>隐私政策</span>
+                </button>
+                <!-- 服务条款按钮 -->
+                <button id="terms-of-service-open-modal" class="flex-1 flex items-center justify-center text-xl font-bold text-gray-900 cursor-pointer bg-white p-5 rounded-lg shadow-md hover:bg-gray-100 transition-colors duration-300 border-b-2 border-primary-red">
+                    <span>服务条款</span>
+                </button>
             </div>
         </div>
     </section>
 
-    <!-- 服务条款区 -->
-    <section id="terms" class="py-12 md:py-16 bg-red-50 rounded-xl shadow-lg my-5">
-        <div class="container mx-auto px-6 max-w-5xl">
-            <!-- 服务条款标题和切换按钮 -->
-            <button id="terms-toggle" class="w-full flex items-center justify-between text-4xl font-bold text-gray-900 mb-6 cursor-pointer bg-white p-6 rounded-lg shadow-md hover:bg-gray-100 transition-colors duration-300">
-                <span>服务条款</span>
-                <svg id="terms-icon" class="w-8 h-8 text-primary-red transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-            </button>
-            <!-- 服务条款内容 (初始隐藏) -->
-            <div id="terms-content" class="accordion-content max-h-0 overflow-hidden">
-                <div class="prose max-w-none text-gray-700 leading-relaxed text-lg pt-4 pb-4">
-                    <p>
-                        欢迎使用未来浏览器！这些服务条款（“条款”）管辖您对未来浏览器产品和服务的使用。使用未来浏览器即表示您同意遵守这些条款。如果您不同意这些条款，请勿使用未来浏览器。
-                    </p>
-                    <h3>接受条款</h3>
-                    <p>
-                        通过下载、安装或使用未来浏览器，您确认您已阅读、理解并同意受这些条款的约束。
-                    </p>
-                    <h3>许可证</h3>
-                    <p>
-                        我们授予您非独家、不可转让、可撤销的有限许可，允许您根据这些条款使用未来浏览器。所有未明确授予您的权利均由我们保留。
-                    </p>
-                    <h3>用户行为</h3>
-                    <p>
-                        您同意在使用未来浏览器时不会：
-                    </p>
-                    <ul>
-                        <li>从事任何非法活动或违反任何适用法律法规。</li>
-                        <li>干扰或破坏未来浏览器及其服务器或网络的正常运行。</li>
-                        <li>尝试未经授权访问未来浏览器的任何部分。</li>
-                        <li>分发病毒、恶意软件或任何其他有害代码。</li>
-                    </ul>
-                    <h3>免责声明</h3>
-                    <p>
-                        未来浏览器按“现状”和“现有”提供，不作任何明示或暗示的保证，包括但不限于适销性、特定用途适用性和不侵权的保证。我们不保证未来浏览器将无错误、不间断或安全。
-                    </p>
-                    <h3>责任限制</h3>
-                    <p>
-                        在适用法律允许的最大范围内，我们对因您使用未来浏览器而引起的或与之相关的任何间接、偶然、特殊、后果性或惩罚性损害不承担责任，即使我们已被告知发生此类损害的可能性。
-                    </p>
-                    <h3>第三方网站和内容</h3>
-                    <p>
-                        未来浏览器可能包含指向第三方网站或内容的链接。我们不对这些第三方网站或内容负责，您使用它们的风险由您自行承担。
-                    </p>
-                    <h3>终止</h3>
-                    <p>
-                        我们可以随时自行决定暂停或终止您对未来浏览器的访问，恕不另行通知，包括但不限于违反这些条款。
-                    </p>
-                    <h3>条款变更</h3>
-                    <p>
-                        我们保留随时修改或替换这些条款的权利。如果更改是实质性的，我们将在生效前至少提前30天通知您。在任何更改生效后继续使用未来浏览器即表示您同意受修订后的条款约束。
-                    </p>
-                    <h3>适用法律</h3>
-                    <p>
-                        这些条款受 [您的国家/地区，例如：中华人民共和国] 法律管辖和解释，不考虑其冲突法原则。
-                    </p>
-                    <h3>联系信息</h3>
-                    <p>
-                        如果您对这些服务条款有任何疑问，请通过 [您的支持邮箱，例如：support@futurebrowser.com] 与我们联系。
-                    </p>
-                </div>
+    <!-- 法律信息弹出层 -->
+    <div id="info-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden p-4">
+        <div class="bg-white rounded-lg shadow-2xl p-6 md:p-8 w-full max-w-2xl lg:max-w-3xl max-h-[90vh] overflow-y-auto relative">
+            <button id="modal-close-button" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-3xl font-bold leading-none focus:outline-none">&times;</button>
+            <h3 id="modal-title" class="text-3xl font-bold text-gray-900 mb-6"></h3>
+            <div id="modal-content-area" class="prose max-w-none text-gray-700 leading-relaxed text-lg">
+                <!-- 内容将由 JavaScript 注入 -->
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- 页脚 -->
     <footer class="bg-gray-800 text-white py-10 rounded-t-lg shadow-inner">
@@ -404,9 +299,8 @@
                     <a href="#" class="text-2xl font-bold hover:text-primary-red transition-colors duration-300">未来浏览器</a>
                 </div>
                 <div class="flex space-x-6">
-                    <a href="#privacy" class="text-gray-300 hover:text-primary-red transition-colors duration-300">隐私政策</a>
-                    <a href="#terms" class="text-gray-300 hover:text-primary-red transition-colors duration-300">服务条款</a>
-                    <a href="#" class="text-gray-300 hover:text-primary-red transition-colors duration-300">联系我们</a>
+                    <a href="?show=privacy" class="text-gray-300 hover:text-primary-red transition-colors duration-300">隐私政策</a>
+                    <a href="?show=terms" class="text-gray-300 hover:text-primary-red transition-colors duration-300">服务条款</a>
                 </div>
             </div>
             <p class="text-gray-400 text-sm">&copy; 2025 未来浏览器。保留所有权利。</p>
@@ -431,44 +325,235 @@
             });
         }
 
-        // Accordion (风琴箱) 逻辑
-        function setupAccordion(toggleId, contentId, iconId) {
-            const toggleElement = document.getElementById(toggleId);
-            const contentElement = document.getElementById(contentId);
-            const iconElement = document.getElementById(iconId);
+        // 法律信息内容（HTML字符串）
+        const privacyPolicyContent = `
+            <p>
+                未来浏览器（“我们”、“我们的”）致力于保护您的隐私。本隐私政策解释了当您使用我们的浏览器产品和服务时，我们如何收集、使用、披露和保护您的信息。
+            </p>
+            <h3>我们收集的信息</h3>
+            <p>
+                当您使用未来浏览器时，我们不会收集您的个人身份信息，除非您明确选择与我们共享这些信息（例如，通过报告问题或参与可选的调查）。我们可能收集非个人身份信息，例如：
+            </p>
+            <ul>
+                <li><strong>技术数据：</strong> 您的设备类型、操作系统版本、浏览器版本（仅限未来浏览器版本）、崩溃报告（匿名化，不包含个人数据）。</li>
+                <li><strong>使用数据：</strong> 匿名化的功能使用统计，旨在改进浏览器性能和用户体验。这些数据无法追溯到任何特定用户。</li>
+            </ul>
+            <h3>我们不收集的信息</h3>
+            <p>
+                未来浏览器设计旨在最大程度地保护您的隐私。我们<strong>不</strong>收集以下信息：
+            </p>
+            <ul>
+                <li>您的浏览历史记录</li>
+                <li>您的搜索查询</li>
+                <li>您访问的网站</li>
+                <li>您的个人身份信息，如姓名、电子邮件地址或IP地址（除非在法律要求下或您明确同意）</li>
+                <li>您在网站上输入的内容</li>
+            </ul>
+            <h3>我们如何使用信息</h3>
+            <p>
+                我们收集的匿名信息仅用于以下目的：
+            </p>
+            <ul>
+                <li>改进和优化未来浏览器的性能、稳定性和安全性。</li>
+                <li>开发新功能和改进现有功能。</li>
+                <li>理解和分析用户趋势（总计数据），以更好地服务用户。</li>
+            </ul>
+            <h3>信息共享与披露</h3>
+            <p>
+                我们不会出售、出租或以其他方式与第三方共享您的个人身份信息。我们可能在以下情况下披露非个人身份聚合数据：
+            </p>
+            <ul>
+                <li><strong>服务提供商：</strong> 我们可能与信任的第三方服务提供商合作，他们为我们提供技术支持、分析服务等，并且他们被要求保护您的信息并仅按照我们的指示使用。</li>
+                <li><strong>法律要求：</strong> 如果法律要求或为了遵守法律程序，我们可能披露信息。</li>
+            </ul>
+            <h3>您的权利</h3>
+            <p>
+                作为未来浏览器的用户，您拥有以下权利：
+            </p>
+            <ul>
+                <li>访问和请求我们持有的关于您的任何非个人身份信息的副本。</li>
+                <li>请求更正任何不准确的信息。</li>
+                <li>请求删除您的信息（如果适用且可能）。</li>
+            </ul>
+            <h3>政策变更</h3>
+            <p>
+                我们可能会不时更新本隐私政策。任何更改都将在本页面发布，并通过浏览器内通知（如果适用）告知。建议您定期查看本页面以了解任何更新。
+            </p>
+            <h3>联系我们</h3>
+            <p>
+                如果您对本隐私政策有任何疑问，请通过 [您的支持邮箱，例如：support@futurebrowser.com] 与我们联系。
+            </p>
+        `;
 
-            if (toggleElement && contentElement && iconElement) {
-                toggleElement.addEventListener('click', () => {
-                    if (contentElement.classList.contains('max-h-0')) {
-                        // 展开内容
-                        contentElement.classList.remove('max-h-0');
-                        contentElement.style.maxHeight = contentElement.scrollHeight + 'px'; // 设置实际高度以触发过渡
-                        iconElement.classList.add('rotate-180'); // 旋转箭头图标
-                        // 动画结束后，将maxHeight设为'auto'，以便内容动态调整
-                        contentElement.addEventListener('transitionend', function handler() {
-                            contentElement.style.maxHeight = 'auto';
-                            contentElement.removeEventListener('transitionend', handler);
-                        });
-                    } else {
-                        // 收起内容
-                        contentElement.style.maxHeight = contentElement.scrollHeight + 'px'; // 获取当前高度
-                        // 强制浏览器重绘，确保从当前高度开始过渡
-                        void contentElement.offsetWidth; 
-                        contentElement.style.maxHeight = '0'; // 过渡到0高度
-                        iconElement.classList.remove('rotate-180'); // 恢复箭头图标方向
-                        // 动画结束后，添加max-h-0以确保隐藏
-                        contentElement.addEventListener('transitionend', function handler() {
-                            contentElement.classList.add('max-h-0');
-                            contentElement.removeEventListener('transitionend', handler);
-                        });
-                    }
-                });
-            }
+        const termsOfServiceContent = `
+            <p>
+                欢迎使用未来浏览器！这些服务条款（“条款”）管辖您对未来浏览器产品和服务的使用。使用未来浏览器即表示您同意遵守这些条款。如果您不同意这些条款，请勿使用未来浏览器。
+            </p>
+            <h3>接受条款</h3>
+            <p>
+                通过下载、安装或使用未来浏览器，您确认您已阅读、理解并同意受这些条款的约束。
+            </p>
+            <h3>许可证</h3>
+            <p>
+                我们授予您非独家、不可转让、可撤销的有限许可，允许您根据这些条款使用未来浏览器。所有未明确授予您的权利均由我们保留。
+            </p>
+            <h3>用户行为</h3>
+            <p>
+                您同意在使用未来浏览器时不会：
+            </p>
+            <ul>
+                <li>从事任何非法活动或违反任何适用法律法规。</li>
+                <li>干扰或破坏未来浏览器及其服务器或网络的正常运行。</li>
+                <li>尝试未经授权访问未来浏览器的任何部分。</li>
+                <li>分发病毒、恶意软件或任何其他有害代码。</li>
+            </ul>
+            <h3>免责声明</h3>
+            <p>
+                未来浏览器按“现状”和“现有”提供，不作任何明示或暗示的保证，包括但不限于适销性、特定用途适用性和不侵权的保证。我们不保证未来浏览器将无错误、不间断或安全。
+            </p>
+            <h3>责任限制</h3>
+            <p>
+                在适用法律允许的最大范围内，我们对因您使用未来浏览器而引起的或与之相关的任何间接、偶然、特殊、后果性或惩罚性损害不承担责任，即使我们已被告知发生此类损害的可能性。
+            </p>
+            <h3>第三方网站和内容</h3>
+            <p>
+                未来浏览器可能包含指向第三方网站或内容的链接。我们不对这些第三方网站或内容负责，您使用它们的风险由您自行承担。
+            </p>
+            <h3>终止</h3>
+            <p>
+                我们可以随时自行决定暂停或终止您对未来浏览器的访问，恕不另行通知，包括但不限于违反这些条款。
+            </p>
+            <h3>条款变更</h3>
+            <p>
+                我们保留随时修改或替换这些条款的权利。如果更改是实质性的，我们将在生效前至少提前30天通知您。在任何更改生效后继续使用未来浏览器即表示您同意受修订后的条款约束。
+            </p>
+            <h3>适用法律</h3>
+            <p>
+                这些条款受 [您的国家/地区，例如：中华人民共和国] 法律管辖和解释，不考虑其冲突法原则。
+            </p>
+            <h3>联系信息</h3>
+            <p>
+                如果您对这些服务条款有任何疑问，请通过 [您的支持邮箱，例如：support@futurebrowser.com] 与我们联系。
+            </p>
+        `;
+
+        // 获取 DOM 元素
+        const privacyPolicyButton = document.getElementById('privacy-policy-open-modal');
+        const termsOfServiceButton = document.getElementById('terms-of-service-open-modal');
+        const infoModal = document.getElementById('info-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalContentArea = document.getElementById('modal-content-area');
+        const modalCloseButton = document.getElementById('modal-close-button');
+        const modalContentDiv = infoModal.querySelector('div'); // Get the inner content div
+
+
+        // 显示模态框函数
+        function showModal(title, content) {
+            modalTitle.textContent = title;
+            modalContentArea.innerHTML = content;
+
+            // 1. Ensure modal is hidden and clean slate from previous animations
+            infoModal.classList.add('hidden'); // Ensure it's hidden before setting initial state
+            infoModal.classList.remove('modal-enter-active', 'modal-leave-active', 'modal-leave-to'); // Clean up active/leave states
+            modalContentDiv.classList.remove('modal-content-enter-active', 'modal-content-leave-active', 'modal-content-leave-to'); // Clean up content active/leave states
+
+            // 2. Set the initial 'from' state
+            infoModal.classList.add('modal-enter-from');
+            modalContentDiv.classList.add('modal-content-enter-from');
+
+            // 3. Make element visible, but still in 'from' state
+            infoModal.classList.remove('hidden');
+
+            // 4. Force reflow to apply initial 'from' styles
+            void infoModal.offsetWidth; // Trigger reflow
+
+            // 5. Apply 'active' state to start transition
+            requestAnimationFrame(() => {
+                infoModal.classList.remove('modal-enter-from'); // Remove 'from' to transition to default state
+                infoModal.classList.add('modal-enter-active'); // Add 'active' to enable transition property
+
+                modalContentDiv.classList.remove('modal-content-enter-from'); // Remove 'from' for content
+                modalContentDiv.classList.add('modal-content-enter-active'); // Add 'active' for content transition
+            });
         }
 
-        // 初始化隐私政策和条款服务风琴箱
-        setupAccordion('privacy-toggle', 'privacy-content', 'privacy-icon');
-        setupAccordion('terms-toggle', 'terms-content', 'terms-icon');
+        // 隐藏模态框函数
+        function hideModal() {
+            // 1. Set the 'leave' state (this will trigger the transition *to* 'modal-leave-to' state)
+            infoModal.classList.remove('modal-enter-active');
+            infoModal.classList.add('modal-leave-active'); // Enable transition property for leaving
+            infoModal.classList.add('modal-leave-to'); // Apply final state (opacity 0) for leaving
+
+            const modalContentDiv = infoModal.querySelector('div');
+            modalContentDiv.classList.remove('modal-content-enter-active');
+            modalContentDiv.classList.add('modal-content-leave-active'); // Enable transition for content
+            modalContentDiv.classList.add('modal-content-leave-to'); // Apply final state (translateY 20px) for content
+
+            // 2. Listen for the end of the transition to completely hide the modal
+            const onTransitionEnd = (event) => {
+                // Ensure the transition is on the outer modal overlay to avoid multiple triggers
+                // and that it's the opacity transition ending (or any relevant property for the overlay)
+                if (event.target === infoModal && event.propertyName === 'opacity') {
+                    infoModal.classList.add('hidden'); // Hide completely
+                    // Clean up classes after transition
+                    infoModal.classList.remove('modal-leave-active', 'modal-leave-to');
+                    modalContentDiv.classList.remove('modal-content-leave-active', 'modal-content-leave-to');
+                    infoModal.removeEventListener('transitionend', onTransitionEnd); // Remove listener
+                }
+            };
+            infoModal.addEventListener('transitionend', onTransitionEnd);
+        }
+
+        // 绑定事件监听器
+        if (privacyPolicyButton) {
+            privacyPolicyButton.addEventListener('click', () => {
+                showModal('隐私政策', privacyPolicyContent);
+            });
+        }
+
+        if (termsOfServiceButton) {
+            termsOfServiceButton.addEventListener('click', () => {
+                showModal('服务条款', termsOfServiceContent);
+            });
+        }
+
+        if (modalCloseButton) {
+            modalCloseButton.addEventListener('click', hideModal);
+        }
+
+        // 点击模态框背景关闭
+        if (infoModal) {
+            infoModal.addEventListener('click', (event) => {
+                // 如果点击的是模态框本身而不是内容区域，则关闭
+                if (event.target === infoModal) {
+                    hideModal();
+                }
+            });
+        }
+
+        // --- 新增代码：页面加载时检查 URL 参数以打开弹出层 ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const showModalParam = urlParams.get('show');
+
+            if (showModalParam === 'privacy') {
+                showModal('隐私政策', privacyPolicyContent);
+            } else if (showModalParam === 'terms') {
+                showModal('服务条款', termsOfServiceContent);
+            }
+        });
+
+        // 更新导航栏链接，指向新的关于我们 section
+        const aboutUsNavLinkDesktop = document.querySelector('header nav .hidden.md\\:flex a[href="#legal"]');
+        if (aboutUsNavLinkDesktop) {
+            aboutUsNavLinkDesktop.setAttribute('href', '#about-us'); // Update href to match new section ID
+            aboutUsNavLinkDesktop.textContent = '关于我们';
+        }
+        const aboutUsNavLinkMobile = document.querySelector('#mobile-menu a[href="#legal"]');
+        if (aboutUsNavLinkMobile) {
+            aboutUsNavLinkMobile.setAttribute('href', '#about-us'); // Update href to match new section ID
+            aboutUsNavLinkMobile.textContent = '关于我们';
+        }
     </script>
 </body>
 </html>
