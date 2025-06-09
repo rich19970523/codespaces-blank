@@ -3,588 +3,472 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GD包網 - 一站式博弈平台建站專家</title>
+    <title>未来浏览器 - 官方网站</title>
+    <!-- 引入 Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 Font Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        /* 自定义 Tailwind 配置，包括 Inter 字体和红色主题 */
+        html {
+            scroll-behavior: smooth; /* 平滑滚动 */
+        }
         body {
             font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8; /* 浅灰色背景 */
+            color: #333; /* 深灰色文本 */
         }
-        .hero-bg {
-            background-image: url('https://placehold.co/1920x1080/1a202c/718096?text=高端運營場景');
-            background-size: cover;
-            background-position: center;
+        /* 定义主红色 */
+        .text-primary-red {
+            color: #ef4444; /* Tailwind red-500 */
         }
-        .cta-button {
-            transition: all 0.3s ease;
+        .bg-primary-red {
+            background-color: #ef4444; /* Tailwind red-500 */
         }
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        .border-primary-red {
+            border-color: #ef4444; /* Tailwind red-500 */
         }
-        .section-title {
-            font-size: 2.25rem; /* text-4xl */
-            font-weight: 700; /* bold */
-            margin-bottom: 1.5rem; /* mb-6 */
+        .hover\:bg-primary-red:hover {
+            background-color: #dc2626; /* Tailwind red-600 */
         }
-        .section-subtitle {
-            font-size: 1.125rem; /* text-lg */
-            color: #4A5568; /* text-gray-700 */
-            margin-bottom: 3rem; /* mb-12 */
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+        .hover\:text-primary-red:hover {
+            color: #ef4444;
         }
-        details > summary {
-            list-style: none;
+
+        /* 动画效果 */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards;
         }
-        details > summary::-webkit-details-marker {
-            display: none;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        .floating-cta {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
+
+        /* 按钮阴影效果 */
+        .btn-shadow {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Accordion transition for max-height */
+        .accordion-content {
+            transition: max-height 0.5s ease-in-out;
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
-
-    <!-- 主容器 -->
-    <main>
-
-        <!-- 1. 首屏導入區 -->
-        <section id="section-1" class="hero-bg text-white min-h-screen flex flex-col items-center justify-center p-8 relative">
-            <div class="absolute inset-0 bg-black opacity-60"></div>
-            <div class="relative z-10 text-center space-y-8">
-                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
-                    不懂架構、沒技術、缺團隊？<br class="hidden md:block">GD包網，從0到1助您輕鬆開站！
-                </h1>
-                <p class="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto">
-                    技術穩定 × 金流完善 × 成果導向，專為中國市場量身打造，快速交付、極速上線，助您搶佔紅利先機！
-                </p>
-                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-                    <a href="#section-13" class="cta-button bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg text-lg shadow-lg">
-                        立即洽詢，啟動您的品牌
-                    </a>
-                    <a href="#section-2" class="cta-button bg-gray-700 hover:bg-gray-800 text-white font-semibold py-3 px-8 rounded-lg text-lg shadow-lg">
-                        預約專人介紹
-                    </a>
-                </div>
+<body class="antialiased">
+    <!-- 导航栏 -->
+    <header class="bg-white shadow-lg sticky top-0 z-50 rounded-b-lg">
+        <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <!-- 标志/Logo -->
+            <div class="flex items-center space-x-2">
+                <svg class="h-8 w-8 text-primary-red" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14.5c-2.48 0-4.5 2.02-4.5 4.5s2.02 4.5 4.5 4.5 4.5-2.02 4.5-4.5-2.02-4.5-4.5-4.5z"/>
+                </svg>
+                <a href="#" class="text-2xl font-bold text-gray-800">未来浏览器</a>
             </div>
-        </section>
-
-        <!-- 2. 品牌價值與系統概覽區 -->
-        <section id="section-2" class="py-16 md:py-24 bg-white">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="section-title text-gray-900">深耕市場，實力鑄就信賴</h2>
-                <p class="section-subtitle">超過百個品牌選擇GD，只因我們系統穩、服務快、金流通！</p>
-                <div class="max-w-4xl mx-auto text-left text-lg text-gray-700 space-y-6 mb-12">
-                    <p>GD包網自2015年成立以來，始終專注於博弈系統的研發與創新。我們的核心技術團隊源自中美頂尖互聯網企業，憑藉深厚的工程實力與超過百個成功平台的實戰經驗，為您的品牌構建堅若磐石的運營基石。我們不僅是建站服務商，更是您長期穩定營運的可靠夥伴。</p>
-                </div>
-                <div class="grid md:grid-cols-4 gap-8 text-center">
-                    <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-                        <div class="text-blue-600 text-4xl mb-3"><i class="fas fa-calendar-alt"></i></div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">2015年創立</h3>
-                        <p class="text-gray-600">9年行業深耕，經驗豐富</p>
-                    </div>
-                    <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-                        <div class="text-blue-600 text-4xl mb-3"><i class="fas fa-check-circle"></i></div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">100+成功案例</h3>
-                        <p class="text-gray-600">服務超百平台，實力見證</p>
-                    </div>
-                    <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-                        <div class="text-blue-600 text-4xl mb-3"><i class="fas fa-users-cog"></i></div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">頂尖技術團隊</h3>
-                        <p class="text-gray-600">中美互聯網背景，技術領先</p>
-                    </div>
-                    <div class="bg-gray-100 p-6 rounded-lg shadow-md">
-                        <div class="text-blue-600 text-4xl mb-3"><i class="fas fa-shield-alt"></i></div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">穩定安全保障</h3>
-                        <p class="text-gray-600">聚焦穩定性、擴展性與安全性</p>
-                    </div>
-                </div>
+            <!-- 导航链接 -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-600 hover:text-primary-red text-lg font-medium transition-colors duration-300">首页</a>
+                <a href="#features" class="text-gray-600 hover:text-primary-red text-lg font-medium transition-colors duration-300">功能</a>
+                <a href="#download" class="text-gray-600 hover:text-primary-red text-lg font-medium transition-colors duration-300">下载</a>
+                <a href="#privacy" class="text-gray-600 hover:text-primary-red text-lg font-medium transition-colors duration-300">隐私政策</a>
+                <a href="#terms" class="text-gray-600 hover:text-primary-red text-lg font-medium transition-colors duration-300">服务条款</a>
             </div>
-        </section>
-
-        <!-- 3. 三大服務核心優勢區 -->
-        <section id="section-3" class="py-16 md:py-24 bg-gray-100">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="section-title text-gray-900">穩、通、美，打造卓越平台體驗</h2>
-                <p class="section-subtitle">技術穩、金流全、UI美，三大核心優勢一次搞定！</p>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="bg-white p-8 rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-300">
-                        <div class="text-4xl mb-6 text-center"><i class="fas fa-server text-blue-700"></i></div>
-                        <h3 class="text-2xl font-semibold text-gray-800 mb-3 text-center">技術穩定</h3>
-                        <p class="text-gray-600 text-center text-sm mb-2 font-medium">全年99.99%穩定，後顧無憂</p>
-                        <p class="text-gray-600 text-left">採用企業級私有雲架構，具備高彈性與高可用性，保障您的平台全年持續穩定運行，從容應對業務高峰。</p>
-                    </div>
-                    <div class="bg-white p-8 rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-300">
-                        <div class="text-4xl mb-6 text-center"><i class="fas fa-coins text-yellow-500"></i></div>
-                        <h3 class="text-2xl font-semibold text-gray-800 mb-3 text-center">金流整合</h3>
-                        <p class="text-gray-600 text-center text-sm mb-2 font-medium">主流支付，一鍵串接</p>
-                        <p class="text-gray-600 text-left">無縫整合業界主流支付渠道與USDT等加密貨幣，支持多種支付方式，確保資金流轉暢通無阻，收款無憂。</p>
-                    </div>
-                    <div class="bg-white p-8 rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-300">
-                        <div class="text-4xl mb-6 text-center"><i class="fas fa-palette text-purple-600"></i></div>
-                        <h3 class="text-2xl font-semibold text-gray-800 mb-3 text-center">視覺彈性</h3>
-                        <p class="text-gray-600 text-center text-sm mb-2 font-medium">百變風格，隨心定制</p>
-                        <p class="text-gray-600 text-left">提供多款精選UI模板，支持自訂LOGO、配色方案與主題風格，深度客製化，打造獨一無二的品牌專屬視覺。</p>
-                    </div>
-                </div>
+            <!-- 移动端菜单按钮 -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-600 focus:outline-none focus:text-primary-red">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
             </div>
-        </section>
+        </nav>
+        <!-- 移动端菜单内容 -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white py-2">
+            <a href="#home" class="block px-6 py-3 text-gray-800 hover:bg-gray-100 transition-colors duration-300">首页</a>
+            <a href="#features" class="block px-6 py-3 text-gray-800 hover:bg-gray-100 transition-colors duration-300">功能</a>
+            <a href="#download" class="block px-6 py-3 text-gray-800 hover:bg-gray-100 transition-colors duration-300">下载</a>
+            <a href="#privacy" class="block px-6 py-3 text-gray-800 hover:bg-gray-100 transition-colors duration-300">隐私政策</a>
+            <a href="#terms" class="block px-6 py-3 text-gray-800 hover:bg-gray-100 transition-colors duration-300">服务条款</a>
+        </div>
+    </header>
 
-        <!-- 4. 平台功能總覽區 -->
-        <section id="section-4" class="py-16 md:py-24 bg-white">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="section-title text-gray-900">強大後台，運營化繁為簡</h2>
-                <p class="section-subtitle">全模組支援，一個後台搞定所有營運操作！後台設計貼近用戶習慣，降低學習曲線，即使非技術人員也能快速上手，支援多角色協同管理，操作效率提升50%！</p>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- 功能點範例，可以複製增加 -->
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-md flex items-start space-x-4">
-                        <div class="text-3xl text-blue-600 pt-1"><i class="fas fa-gift"></i></div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-gray-800 mb-2">紅利模組</h3>
-                            <p class="text-gray-600">多樣化紅利活動，靈活配置</p>
-                        </div>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-md flex items-start space-x-4">
-                        <div class="text-3xl text-blue-600 pt-1"><i class="fas fa-users"></i></div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-gray-800 mb-2">會員分層</h3>
-                            <p class="text-gray-600">精細化用戶管理，提升留存</p>
-                        </div>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-md flex items-start space-x-4">
-                        <div class="text-3xl text-blue-600 pt-1"><i class="fas fa-sitemap"></i></div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-gray-800 mb-2">代理管理</h3>
-                            <p class="text-gray-600">無限層級代理，高效拓客</p>
-                        </div>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-md flex items-start space-x-4">
-                        <div class="text-3xl text-blue-600 pt-1"><i class="fas fa-chart-line"></i></div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-gray-800 mb-2">數據報表</h3>
-                            <p class="text-gray-600">即時數據追蹤，驅動決策</p>
-                        </div>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-md flex items-start space-x-4">
-                        <div class="text-3xl text-blue-600 pt-1"><i class="fas fa-user-shield"></i></div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-gray-800 mb-2">權限控管</h3>
-                            <p class="text-gray-600">多角色權限，安全便捷</p>
-                        </div>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-md flex items-start space-x-4">
-                        <div class="text-3xl text-blue-600 pt-1"><i class="fas fa-cogs"></i></div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-gray-800 mb-2">風控系統</h3>
-                            <p class="text-gray-600">智能風險識別，保障安全</p>
-                        </div>
-                    </div>
-                </div>
-                 <img src="https://placehold.co/1200x600/e2e8f0/4a5568?text=平台後台截圖示意" alt="平台後台截圖示意" class="mt-12 rounded-lg shadow-xl mx-auto">
+    <!-- 主页/英雄区 -->
+    <section id="home" class="bg-gradient-to-r from-red-50 to-white py-20 md:py-32 text-center rounded-b-xl shadow-lg fade-in">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
+                发现 <span class="text-primary-red">更安全</span>、<span class="text-primary-red">更快速</span>、<span class="text-primary-red">更智能</span> 的浏览体验
+            </h1>
+            <p class="text-lg md:text-xl text-gray-700 mb-10 leading-relaxed">
+                未来浏览器致力于提供卓越的隐私保护、闪电般的加载速度和直观的用户界面，让您的上网体验前所未有。
+            </p>
+            <a href="#download" class="inline-block bg-primary-red text-white text-xl font-semibold py-4 px-10 rounded-full hover:bg-red-600 transition-all duration-300 transform hover:scale-105 btn-shadow">
+                立即免费下载
+            </a>
+            <div class="mt-12">
+                <!-- 示意图或浏览器截图的占位符 -->
+                <img src="https://placehold.co/800x450/e0e0e0/555555?text=未来浏览器界面示意图" alt="未来浏览器界面示意图" class="mx-auto rounded-lg shadow-xl border border-gray-200">
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- 5. 合作方案比較區 -->
-        <section id="section-5" class="py-16 md:py-24 bg-gray-100">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="section-title text-gray-900">明智之選，全托管省心省力</h2>
-                <p class="section-subtitle">還在為分段合作、多方對接而煩惱？GD包網提供真正全托管解決方案，從平台搭建、金流配置、活動策劃到技術支持，我們為您一次搞定，讓您專注核心業務，輕鬆實現快速上線！</p>
-                <h3 class="text-2xl font-semibold mb-8 text-gray-800">不必選了，GD包網全托管，我們全都幫你做完！</h3>
-                <div class="overflow-x-auto">
-                    <table class="w-full max-w-4xl mx-auto table-auto border-collapse border border-gray-300 shadow-lg rounded-lg">
-                        <thead>
-                            <tr class="bg-gray-200 text-gray-700 uppercase text-sm leading-normal">
-                                <th class="py-3 px-4 border border-gray-300">項目</th>
-                                <th class="py-3 px-4 border border-gray-300">其他標準包</th>
-                                <th class="py-3 px-4 border border-gray-300">其他全托管</th>
-                                <th class="py-3 px-4 border border-blue-500 bg-blue-100">GD包網全托管</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-gray-700 text-sm font-light">
-                            <tr class="border-b border-gray-200 hover:bg-gray-50">
-                                <td class="py-3 px-4 border border-gray-300">建站交付</td>
-                                <td class="py-3 px-4 border border-gray-300 text-center">✅</td>
-                                <td class="py-3 px-4 border border-gray-300 text-center">✅</td>
-                                <td class="py-3 px-4 border border-blue-500 text-center font-semibold text-blue-700">✅ 一站極速完成</td>
-                            </tr>
-                            <tr class="border-b border-gray-200 hover:bg-gray-50">
-                                <td class="py-3 px-4 border border-gray-300">金流串接</td>
-                                <td class="py-3 px-4 border border-gray-300 text-center">✅</td>
-                                <td class="py-3 px-4 border border-gray-300 text-center">✅</td>
-                                <td class="py-3 px-4 border border-blue-500 text-center font-semibold text-blue-700">✅ 多通道整合，即刻啟用</td>
-                            </tr>
-                            <tr class="border-b border-gray-200 hover:bg-gray-50">
-                                <td class="py-3 px-4 border border-gray-300">活動設計支援</td>
-                                <td class="py-3 px-4 border border-gray-300 text-center">⛔ (需自行設計)</td>
-                                <td class="py-3 px-4 border border-gray-300 text-center">✅ (有限模板)</td>
-                                <td class="py-3 px-4 border border-blue-500 text-center font-semibold text-blue-700">✅ 自帶多樣模塊，高效支援</td>
-                            </tr>
-                            <tr class="border-b border-gray-200 hover:bg-gray-50">
-                                <td class="py-3 px-4 border border-gray-300">客服協助</td>
-                                <td class="py-3 px-4 border border-gray-300 text-center">⛔ (需自行組建)</td>
-                                <td class="py-3 px-4 border border-gray-300 text-center">✅ (基礎培訓)</td>
-                                <td class="py-3 px-4 border border-blue-500 text-center font-semibold text-blue-700">✅ 專業培訓，疑難解答</td>
-                            </tr>
-                             <tr class="border-b border-gray-200 hover:bg-gray-50">
-                                <td class="py-3 px-4 border border-gray-300">維護更新</td>
-                                <td class="py-3 px-4 border border-gray-300 text-center">⚠️ (部分自理)</td>
-                                <td class="py-3 px-4 border border-gray-300 text-center">✅ (標準維護)</td>
-                                <td class="py-3 px-4 border border-blue-500 text-center font-semibold text-blue-700">✅ 全年無休，主動升級</td>
-                            </tr>
-                            <tr class="bg-gray-50">
-                                <td class="py-3 px-4 border border-gray-300 font-semibold">適合對象</td>
-                                <td class="py-3 px-4 border border-gray-300">有經驗，部分自理</td>
-                                <td class="py-3 px-4 border border-gray-300">無自營團隊</td>
-                                <td class="py-3 px-4 border border-blue-500 font-semibold text-blue-700">所有想快速上線、專注盈利者</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="mt-12">
-                    <a href="#section-13" class="cta-button bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg text-lg">
-                        立即預約諮詢，獲取專屬方案
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- 6. UI模板展示 + 客製化設計支援區 -->
-        <section id="section-6" class="py-16 md:py-24 bg-white">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="section-title text-gray-900">打造您的專屬品牌門面</h2>
-                <p class="section-subtitle">多款主流模板，風格自選；深度客製，彰顯品牌個性！UI不是簡單的包裝，而是品牌給用戶的第一印象。我們提供從精選模板到完全自訂的彈性選擇，支持跨裝置視覺一致性，助您打造令人過目不忘的品牌體驗。</p>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- 模板範例 -->
-                    <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
-                        <img src="https://placehold.co/600x400/374151/e5e7eb?text=歐美風模板 (PC)" alt="歐美風模板" class="w-full h-48 object-cover">
-                        <img src="https://placehold.co/300x500/374151/e5e7eb?text=歐美風 (Mobile)" alt="歐美風模板 Mobile" class="w-1/2 h-64 object-cover mx-auto mt-2 sm:hidden">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-800 mb-2">歐美風｜暗底亮字</h3>
-                            <p class="text-gray-600">科技動感，高端大氣，適合追求國際化風格的品牌。</p>
-                            <p class="text-sm text-blue-600 mt-3 font-medium">可自訂LOGO、配色、模塊</p>
-                        </div>
-                    </div>
-                    <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
-                        <img src="https://placehold.co/600x400/f3f4f6/374151?text=商務型模板 (PC)" alt="商務型模板" class="w-full h-48 object-cover">
-                         <img src="https://placehold.co/300x500/f3f4f6/374151?text=商務型 (Mobile)" alt="商務型模板 Mobile" class="w-1/2 h-64 object-cover mx-auto mt-2 sm:hidden">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-800 mb-2">商務型｜淺底深字</h3>
-                            <p class="text-gray-600">簡約專業，穩重可靠，適合注重信任感的企業品牌。</p>
-                             <p class="text-sm text-blue-600 mt-3 font-medium">快速套用，跨裝置視覺統一</p>
-                        </div>
-                    </div>
-                    <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden">
-                        <img src="https://placehold.co/600x400/fffbeb/b45309?text=亞洲風模板 (PC)" alt="亞洲風模板" class="w-full h-48 object-cover">
-                        <img src="https://placehold.co/300x500/fffbeb/b45309?text=亞洲風 (Mobile)" alt="亞洲風模板 Mobile" class="w-1/2 h-64 object-cover mx-auto mt-2 sm:hidden">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-800 mb-2">亞洲風｜暖色點綴</h3>
-                            <p class="text-gray-600">親和舒適，文化共鳴，適合針對亞洲市場的品牌。</p>
-                            <p class="text-sm text-blue-600 mt-3 font-medium">字型風格，彈性調整</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 7. 技術支援與系統穩定保障區 -->
-        <section id="section-7" class="py-16 md:py-24 bg-gray-900 text-white">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="section-title">堅實後盾，保障您的業務持續領先</h2>
-                <p class="section-subtitle !text-gray-300">您的穩定運營，我們的技術承諾！專業團隊，全年無休保駕護航。</p>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
-                    <div class="bg-gray-800 p-6 rounded-lg shadow-md flex items-start space-x-4">
-                        <div class="text-3xl text-blue-400 pt-1"><i class="fas fa-headset"></i></div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-white mb-2">365天無休維運</h3>
-                            <p class="text-gray-400">專業團隊隨時待命，快速響應。</p>
-                        </div>
-                    </div>
-                    <div class="bg-gray-800 p-6 rounded-lg shadow-md flex items-start space-x-4">
-                        <div class="text-3xl text-blue-400 pt-1"><i class="fas fa-database"></i></div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-white mb-2">企業級主機備援</h3>
-                            <p class="text-gray-400">雙主機架構，數據安全無虞。</p>
-                        </div>
-                    </div>
-                    <div class="bg-gray-800 p-6 rounded-lg shadow-md flex items-start space-x-4">
-                        <div class="text-3xl text-blue-400 pt-1"><i class="fas fa-fighter-jet"></i></div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-white mb-2">全球CDN加速</h3>
-                            <p class="text-gray-400">極速加載體驗，用戶不流失。</p>
-                        </div>
-                    </div>
-                    <div class="bg-gray-800 p-6 rounded-lg shadow-md flex items-start space-x-4">
-                        <div class="text-3xl text-blue-400 pt-1"><i class="fas fa-shield-virus"></i></div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-white mb-2">多層防火牆防護</h3>
-                            <p class="text-gray-400">有效抵禦DDoS、CC等常見攻擊。</p>
-                        </div>
-                    </div>
-                    <div class="bg-gray-800 p-6 rounded-lg shadow-md flex items-start space-x-4">
-                        <div class="text-3xl text-blue-400 pt-1"><i class="fas fa-ban"></i></div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-white mb-2">智能防跳轉機制</h3>
-                            <p class="text-gray-400">保障您的域名安全，流量不被劫持。</p>
-                        </div>
-                    </div>
-                    <div class="bg-gray-800 p-6 rounded-lg shadow-md flex items-start space-x-4">
-                        <div class="text-3xl text-blue-400 pt-1"><i class="fas fa-sync-alt"></i></div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-white mb-2">持續更新與優化</h3>
-                            <p class="text-gray-400">系統功能與安全策略與時俱進。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 8. 金流通道與多幣種支援區 -->
-        <section id="section-8" class="py-16 md:py-24 bg-white">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="section-title text-gray-900">全球支付暢通，業務拓展無界</h2>
-                <p class="section-subtitle">金流卡關 = 營運卡關？GD包網助您打通全球支付任督二脈！我們已為您整合多國主流支付渠道及本地化支付方案，支援多種法定貨幣與加密貨幣（如USDT），幣種配置靈活，匯率自動更新，助您輕鬆拓展全球市場。</p>
-                <div class="flex flex-wrap justify-center items-center gap-8 mb-12">
-                    <div class="text-center p-4 bg-gray-100 rounded-lg shadow-sm w-36">
-                        <i class="fab fa-cc-visa text-5xl text-blue-700 mb-2"></i>
-                        <p class="text-sm font-medium">信用卡</p>
-                    </div>
-                    <div class="text-center p-4 bg-gray-100 rounded-lg shadow-sm w-36">
-                        <i class="fab fa-bitcoin text-5xl text-yellow-500 mb-2"></i>
-                        <p class="text-sm font-medium">加密貨幣 (USDT)</p>
-                    </div>
-                     <div class="text-center p-4 bg-gray-100 rounded-lg shadow-sm w-36">
-                        <i class="fas fa-qrcode text-5xl text-green-500 mb-2"></i>
-                        <p class="text-sm font-medium">掃碼支付</p>
-                    </div>
-                    <div class="text-center p-4 bg-gray-100 rounded-lg shadow-sm w-36">
-                        <i class="fas fa-landmark text-5xl text-indigo-500 mb-2"></i>
-                        <p class="text-sm font-medium">本地銀行</p>
-                    </div>
-                    <div class="text-center p-4 bg-gray-100 rounded-lg shadow-sm w-36">
-                        <i class="fas fa-wallet text-5xl text-purple-500 mb-2"></i>
-                        <p class="text-sm font-medium">第三方支付</p>
-                    </div>
-                </div>
-                <p class="text-lg text-gray-700 font-semibold">亮點：可自定義支付層級｜可擴展新通道｜自動結算｜報表清晰</p>
-                <img src="https://placehold.co/1000x500/e0f2fe/0ea5e9?text=全球支付網絡示意圖" alt="全球支付網絡示意圖" class="mt-12 rounded-lg shadow-xl mx-auto">
-            </div>
-        </section>
-
-        <!-- 9. 後台管理與數據報表區 -->
-        <section id="section-9" class="py-16 md:py-24 bg-gray-100">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="section-title text-gray-900">運籌帷幄，數據驅動精準決策</h2>
-                <p class="section-subtitle">報表即時看，權限清晰管，操作極簡便！不懂技術也能輕鬆管好站。</p>
-                 <img src="https://placehold.co/1200x700/e2e8f0/4a5568?text=後台管理儀表板模擬圖" alt="後台管理儀表板模擬圖" class="mb-12 rounded-lg shadow-xl mx-auto">
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-semibold text-blue-700 mb-2"><i class="fas fa-tachometer-alt mr-2"></i>全模組數據儀表板</h3>
-                        <p class="text-gray-600">營運核心數據一目了然，支持自訂關鍵指標。</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-semibold text-blue-700 mb-2"><i class="fas fa-user-friends mr-2"></i>精細化會員分析</h3>
-                        <p class="text-gray-600">用戶畫像、行為軌跡、LTV全掌握。</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-semibold text-blue-700 mb-2"><i class="fas fa-money-check-alt mr-2"></i>實時金流追蹤</h3>
-                        <p class="text-gray-600">每一筆存提款記錄清晰可查，資金流向全透明。</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-semibold text-blue-700 mb-2"><i class="fas fa-chart-pie mr-2"></i>代理業績報表</h3>
-                        <p class="text-gray-600">各級代理貢獻、分潤自動統計。</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-semibold text-blue-700 mb-2"><i class="fas fa-user-lock mr-2"></i>多維度權限配置</h3>
-                        <p class="text-gray-600">站長、客服、財務、代理，各司其職，安全高效。</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-semibold text-blue-700 mb-2"><i class="fas fa-mobile-alt mr-2"></i>移動端同步管理</h3>
-                        <p class="text-gray-600">主管即使出差在外，也能隨時通過手機掌握運營動態。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 10. 市場拓展與代理招商支持區 -->
-        <section id="section-10" class="py-16 md:py-24 bg-orange-500 text-white">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="section-title">不止建站，更助您贏在起跑線</h2>
-                <p class="section-subtitle !text-orange-100">幫您快速架站，更要強力助您招商拓客！開站只是第一步，成功運營離不開持續的市場拓展。GD包網深諳此道，為您提供的不僅是頂級系統，更有全方位的市場拓展與代理招商支持，讓您的人氣與財氣同步增長！</p>
-                <img src="https://placehold.co/1000x500/fed7aa/9a3412?text=代理招商支持流程圖" alt="代理招商支持流程圖" class="mb-12 rounded-lg shadow-xl mx-auto">
-                <div class="grid md:grid-cols-2 gap-8 text-left">
-                    <div class="bg-orange-600 p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-semibold mb-2"><i class="fas fa-network-wired mr-2"></i>內建強大代理系統</h3>
-                        <p class="text-orange-100">無限層級發展，自訂分潤比例，推廣鏈接一鍵生成，業績追蹤清晰。</p>
-                    </div>
-                    <div class="bg-orange-600 p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-semibold mb-2"><i class="fas fa-file-alt mr-2"></i>提供全套招商素材</h3>
-                        <p class="text-orange-100">精美推廣圖文、標準話術腳本、成功案例分享。</p>
-                    </div>
-                    <div class="bg-orange-600 p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-semibold mb-2"><i class="fas fa-lightbulb mr-2"></i>專業招商流程建議</h3>
-                        <p class="text-orange-100">從策略制定到團隊培訓，助您快速啟動。</p>
-                    </div>
-                    <div class="bg-orange-600 p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-semibold mb-2"><i class="fas fa-bullhorn mr-2"></i>行銷活動模塊</h3>
-                        <p class="text-orange-100">豐富的行銷工具，助力代理高效轉化。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 11. 客戶成功與品牌案例區 -->
-        <section id="section-11" class="py-16 md:py-24 bg-gray-800 text-white">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="section-title">百家之選，口碑見證實力</h2>
-                <p class="section-subtitle !text-gray-300">超過100個品牌的共同選擇，他們的成功，您也可以複製！</p>
-                <div class="grid md:grid-cols-3 gap-8 mb-12">
-                     <!-- 案例範例 -->
-                    <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
-                        <img src="https://placehold.co/100x100/4a5568/e2e8f0?text=品牌LOGO+A" alt="品牌LOGO A" class="w-20 h-20 mx-auto rounded-full mb-4 border-2 border-blue-400">
-                        <h3 class="text-xl font-semibold mb-2">新晉中國市場平台</h3>
-                        <p class="text-sm text-gray-400 mb-3">缺乏技術積累，GD助其2個月內穩定上線，首季度盈利超預期！</p>
-                        <p class="text-gray-300 italic">"選擇GD包網是我們最正確的決定，系統穩定，服務響應快！" - 王總</p>
-                    </div>
-                     <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
-                        <img src="https://placehold.co/100x100/4a5568/e2e8f0?text=品牌LOGO+B" alt="品牌LOGO B" class="w-20 h-20 mx-auto rounded-full mb-4 border-2 border-blue-400">
-                        <h3 class="text-xl font-semibold mb-2">東南亞拓展集團</h3>
-                        <p class="text-sm text-gray-400 mb-3">多語言多幣種需求，GD提供高度客製化方案，市場反響熱烈。</p>
-                        <p class="text-gray-300 italic">"GD的系統擴展性強，完美適配我們的海外業務。" - 李經理</p>
-                    </div>
-                     <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
-                        <img src="https://placehold.co/100x100/4a5568/e2e8f0?text=品牌LOGO+C" alt="品牌LOGO C" class="w-20 h-20 mx-auto rounded-full mb-4 border-2 border-blue-400">
-                        <h3 class="text-xl font-semibold mb-2">老牌娛樂公司轉型</h3>
-                        <p class="text-sm text-gray-400 mb-3">尋求線上突破，GD提供全方位技術與運營指導，成功轉型。</p>
-                        <p class="text-gray-300 italic">"感謝GD團隊的專業支持，讓我們少走了很多彎路。" - 陳董</p>
-                    </div>
-                </div>
-                <div class="flex flex-wrap justify-center gap-4">
-                    <span class="bg-blue-500 text-white text-sm font-medium mr-2 px-3 py-1 rounded-full">平均21天快速上線</span>
-                    <span class="bg-green-500 text-white text-sm font-medium mr-2 px-3 py-1 rounded-full">客戶續約率95%</span>
-                    <span class="bg-yellow-500 text-black text-sm font-medium px-3 py-1 rounded-full">助力客戶3個月實現盈利</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- 12. 常見問題 Q&A 區 -->
-        <section id="section-12" class="py-16 md:py-24 bg-white">
-            <div class="container mx-auto px-6">
-                <h2 class="section-title text-gray-900 text-center">您的疑慮，我們早已洞悉</h2>
-                <p class="section-subtitle text-center">還有疑問？一分鐘快速了解GD包網</p>
-                <div class="max-w-3xl mx-auto space-y-6">
-                    <details class="bg-gray-50 p-6 rounded-lg shadow-sm group">
-                        <summary class="flex justify-between items-center font-semibold text-lg text-gray-800 cursor-pointer">
-                            我不是技術人員，也能操作GD包網的後台系統嗎？
-                            <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
-                        </summary>
-                        <p class="text-gray-600 mt-4">絕對可以！GD包網的後台界面設計直觀簡潔，操作邏輯清晰易懂。我們還提供詳細的教學視頻和中文客服團隊輔助，確保您能快速上手，無技術背景也能輕鬆管理。</p>
-                    </details>
-                    <details class="bg-gray-50 p-6 rounded-lg shadow-sm group">
-                        <summary class="flex justify-between items-center font-semibold text-lg text-gray-800 cursor-pointer">
-                            我擔心金流問題，例如無法收款或資金被凍結怎麼辦？
-                             <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
-                        </summary>
-                        <p class="text-gray-600 mt-4">GD包網已整合多家穩定可靠的主流金流平台，並支持多種支付方式。您可以根據自身需求靈活切換和配置收款錢包，最大程度保障您的資金安全與收款效率。</p>
-                    </details>
-                    <details class="bg-gray-50 p-6 rounded-lg shadow-sm group">
-                        <summary class="flex justify-between items-center font-semibold text-lg text-gray-800 cursor-pointer">
-                            平台開站後，GD包網還會提供後續的技術支援和服務嗎？
-                             <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
-                        </summary>
-                        <p class="text-gray-600 mt-4">當然！我們提供全年無休的專業技術團隊支持，並為每位客戶建立專屬的運營溝通群組。無論是日常維護、緊急故障排除還是功能升級，我們都將提供持續、快速的支援服務。</p>
-                    </details>
-                    <details class="bg-gray-50 p-6 rounded-lg shadow-sm group">
-                        <summary class="flex justify-between items-center font-semibold text-lg text-gray-800 cursor-pointer">
-                            我可以先試用或者看看實際的演示（Demo）嗎？
-                             <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
-                        </summary>
-                        <p class="text-gray-600 mt-4">非常歡迎！您可以聯繫我們的商務顧問，我們將很樂意為您安排一次詳細的線上產品演示（Demo）。屆時您可以親身體驗GD包網的各項功能和便捷操作，全面了解我們的系統。</p>
-                    </details>
-                </div>
-            </div>
-        </section>
-
-        <!-- 13. 立即洽詢 + CTA 引導區 -->
-        <section id="section-13" class="py-16 md:py-24 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="section-title">把握機會，即刻開啟您的財富之路！</h2>
-                <p class="section-subtitle !text-blue-100">系統好不好，用過才知道！立即行動，讓GD包網助您事業騰飛！無壓力諮詢，無隱藏費用，現在就留下您的聯繫方式，我們的資深商務顧問將在第一時間與您聯繫，為您量身定制專屬的合作方案，並提供系統演示。</p>
-                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-12">
-                    <a href="#" class="cta-button bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-4 px-10 rounded-lg text-xl shadow-xl">
-                        <i class="fas fa-comments mr-2"></i>立即免費諮詢
-                    </a>
-                    <a href="#" class="cta-button bg-gray-100 hover:bg-gray-200 text-indigo-700 font-bold py-4 px-10 rounded-lg text-xl shadow-xl">
-                        <i class="fas fa-desktop mr-2"></i>預約產品演示
-                    </a>
-                </div>
-                <div class="max-w-4xl mx-auto bg-white bg-opacity-10 p-8 rounded-lg shadow-xl">
-                    <h3 class="text-2xl font-semibold mb-6">透過以下任一方式與我們聯繫：</h3>
-                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
-                        <div class="flex items-center space-x-3 p-3 bg-white bg-opacity-20 rounded-md">
-                            <i class="fab fa-telegram-plane text-3xl text-sky-300"></i>
-                            <div>
-                                <p class="font-semibold">商務Telegram</p>
-                                <p class="text-sm break-all">@GDBWRX01</p>
-                                <img src="https://placehold.co/100x100/ffffff/3b82f6?text=TG+QR" alt="Telegram QR Code" class="w-16 h-16 mt-1 rounded">
-                            </div>
-                        </div>
-                         <div class="flex items-center space-x-3 p-3 bg-white bg-opacity-20 rounded-md">
-                            <i class="fab fa-facebook text-3xl text-blue-300"></i>
-                            <div>
-                                <p class="font-semibold">Facebook</p>
-                                <p class="text-sm break-all">Gdsw Kennedy</p>
-                                <img src="https://placehold.co/100x100/ffffff/60a5fa?text=FB+QR" alt="Facebook QR Code" class="w-16 h-16 mt-1 rounded">
-                            </div>
-                        </div>
-                        <div class="flex items-center space-x-3 p-3 bg-white bg-opacity-20 rounded-md">
-                            <i class="fab fa-whatsapp text-3xl text-green-300"></i>
-                            <div>
-                                <p class="font-semibold">WhatsApp</p>
-                                <p class="text-sm break-all">+855 762525843</p>
-                                <img src="https://placehold.co/100x100/ffffff/4ade80?text=WA+QR" alt="WhatsApp QR Code" class="w-16 h-16 mt-1 rounded">
-                            </div>
-                        </div>
-                        <div class="flex items-center space-x-3 p-3 bg-white bg-opacity-20 rounded-md">
-                            <i class="fab fa-skype text-3xl text-cyan-300"></i>
-                            <div>
-                                <p class="font-semibold">Skype</p>
-                                <p class="text-sm break-all">live:.cid.27b73934cb9812c8</p>
-                                <img src="https://placehold.co/100x100/ffffff/22d3ee?text=SKYPE+QR" alt="Skype QR Code" class="w-16 h-16 mt-1 rounded">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                 <p class="mt-8 text-sm text-blue-200">現在諮詢，前10位簽約客戶即享價值万元的【豪華推廣大禮包】！</p>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- 頁尾 -->
-    <footer class="bg-gray-900 text-gray-400 py-8 text-center">
+    <!-- 功能区 -->
+    <section id="features" class="py-16 md:py-24 bg-white rounded-xl shadow-lg my-10">
         <div class="container mx-auto px-6">
-            <p>&copy; <span id="currentYear"></span> GD包網 版權所有。</p>
-            <p class="text-sm mt-1">本服務僅面向合法合規運營的商業實體。</p>
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">
+                核心功能
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- 功能卡片 1：隐私保护 -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md border-t-4 border-primary-red transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-primary-red mb-4">
+                        <svg class="h-10 w-10" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 19.7c-3.9-.9-7-4.17-7-8.7V6.3l7-3.1 7 3.1v5.7c0 4.53-3.1 7.8-7 8.7zM15.5 12H14V9.5h-3V12H8.5l3.5 3.5 3.5-3.5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">
+                        增强隐私保护
+                    </h3>
+                    <p class="text-gray-700">
+                        内置广告拦截器和跟踪保护，阻止不必要的跟踪和数据收集，让您的浏览更私密。
+                    </p>
+                </div>
+
+                <!-- 功能卡片 2：极速体验 -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md border-t-4 border-primary-red transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-primary-red mb-4">
+                        <svg class="h-10 w-10" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M13 14H11V9h2v5zm0 8h-2v-2h2v2zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">
+                        闪电般的速度
+                    </h3>
+                    <p class="text-gray-700">
+                        优化加载机制，显著减少页面加载时间，享受无缝的上网体验。
+                    </p>
+                </div>
+
+                <!-- 功能卡片 3：智能工具 -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md border-t-4 border-primary-red transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-primary-red mb-4">
+                        <svg class="h-10 w-10" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM10 4h4v2h-4V4zm10 15H4V8h16v11z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">
+                        智能内置工具
+                    </h3>
+                    <p class="text-gray-700">
+                        集成翻译、截图和密码管理器等实用工具，提升您的工作效率。
+                    </p>
+                </div>
+
+                <!-- 功能卡片 4：跨平台同步 -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md border-t-4 border-primary-red transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-primary-red mb-4">
+                        <svg class="h-10 w-10" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M18 10h-2V7c0-1.66-1.34-3-3-3S10 5.34 10 7v3H8c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2-2zm-3 0V7c0-.55.45-1 1-1s1 .45 1 1v3h-2zm4 10H7v-8h11v8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">
+                        无缝跨平台同步
+                    </h3>
+                    <p class="text-gray-700">
+                        书签、历史记录和密码在所有设备上同步，让您随时随地继续浏览。
+                    </p>
+                </div>
+
+                <!-- 功能卡片 5：可定制界面 -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md border-t-4 border-primary-red transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-primary-red mb-4">
+                        <svg class="h-10 w-10" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 16c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7zm-1-8V7h2v4h4v2h-4v4h-2v-4H7v-2h4z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">
+                        高度可定制界面
+                    </h3>
+                    <p class="text-gray-700">
+                        提供多样化的主题、扩展和设置，个性化您的浏览器外观和功能。
+                    </p>
+                </div>
+
+                <!-- 功能卡片 6：节能模式 -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md border-t-4 border-primary-red transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-primary-red mb-4">
+                        <svg class="h-10 w-10" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M13 14H11V9h2v5zm0 8h-2v-2h2v2zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">
+                        智能节能模式
+                    </h3>
+                    <p class="text-gray-700">
+                        优化资源使用，延长设备电池寿命，尤其在移动设备上表现出色。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 下载区 -->
+    <section id="download" class="py-16 md:py-24 bg-primary-red text-white rounded-xl shadow-lg my-10">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-8">立即下载未来浏览器</h2>
+            <p class="text-lg mb-12 max-w-2xl mx-auto">
+                选择您的操作系统，开始体验更安全、更快速、更智能的上网之旅。
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <!-- Windows 下载 -->
+                <div class="bg-white text-gray-800 p-8 rounded-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+                    <img src="https://placehold.co/80x80/ef4444/ffffff?text=Win" alt="Windows Logo" class="mx-auto mb-4">
+                    <h3 class="text-2xl font-semibold mb-4">Windows</h3>
+                    <p class="mb-6">兼容 Windows 10/11</p>
+                    <a href="#" class="inline-block bg-primary-red text-white text-lg font-semibold py-3 px-8 rounded-full hover:bg-red-600 transition-colors duration-300 btn-shadow">
+                        下载 (64位)
+                    </a>
+                </div>
+                <!-- macOS 下载 -->
+                <div class="bg-white text-gray-800 p-8 rounded-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+                    <img src="https://placehold.co/80x80/ef4444/ffffff?text=Mac" alt="macOS Logo" class="mx-auto mb-4">
+                    <h3 class="text-2xl font-semibold mb-4">macOS</h3>
+                    <p class="mb-6">兼容 macOS 10.15+</p>
+                    <a href="#" class="inline-block bg-primary-red text-white text-lg font-semibold py-3 px-8 rounded-full hover:bg-red-600 transition-colors duration-300 btn-shadow">
+                        下载 (ARM/Intel)
+                    </a>
+                </div>
+                <!-- Linux 下载 -->
+                <div class="bg-white text-gray-800 p-8 rounded-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+                    <img src="https://placehold.co/80x80/ef4444/ffffff?text=Linux" alt="Linux Logo" class="mx-auto mb-4">
+                    <h3 class="text-2xl font-semibold mb-4">Linux</h3>
+                    <p class="mb-6">适用于 Debian/Ubuntu</p>
+                    <a href="#" class="inline-block bg-primary-red text-white text-lg font-semibold py-3 px-8 rounded-full hover:bg-red-600 transition-colors duration-300 btn-shadow">
+                        下载 (.deb)
+                    </a>
+                </div>
+            </div>
+            <p class="mt-12 text-sm opacity-90">
+                未来浏览器也将在 iOS 和 Android 平台推出。敬请期待！
+            </p>
+        </div>
+    </section>
+
+    <!-- 隐私政策区 -->
+    <section id="privacy" class="py-12 md:py-16 bg-white rounded-xl shadow-lg my-5">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <!-- 隐私政策标题和切换按钮 -->
+            <button id="privacy-toggle" class="w-full flex items-center justify-between text-4xl font-bold text-gray-900 mb-6 cursor-pointer bg-gray-50 p-6 rounded-lg shadow-md hover:bg-gray-100 transition-colors duration-300">
+                <span>隐私政策</span>
+                <svg id="privacy-icon" class="w-8 h-8 text-primary-red transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </button>
+            <!-- 隐私政策内容 (初始隐藏) -->
+            <div id="privacy-content" class="accordion-content max-h-0 overflow-hidden">
+                <div class="prose max-w-none text-gray-700 leading-relaxed text-lg pt-4 pb-4">
+                    <p>
+                        未来浏览器（“我们”、“我们的”）致力于保护您的隐私。本隐私政策解释了当您使用我们的浏览器产品和服务时，我们如何收集、使用、披露和保护您的信息。
+                    </p>
+                    <h3>我们收集的信息</h3>
+                    <p>
+                        当您使用未来浏览器时，我们不会收集您的个人身份信息，除非您明确选择与我们共享这些信息（例如，通过报告问题或参与可选的调查）。我们可能收集非个人身份信息，例如：
+                    </p>
+                    <ul>
+                        <li><strong>技术数据：</strong> 您的设备类型、操作系统版本、浏览器版本（仅限未来浏览器版本）、崩溃报告（匿名化，不包含个人数据）。</li>
+                        <li><strong>使用数据：</strong> 匿名化的功能使用统计，旨在改进浏览器性能和用户体验。这些数据无法追溯到任何特定用户。</li>
+                    </ul>
+                    <h3>我们不收集的信息</h3>
+                    <p>
+                        未来浏览器设计旨在最大程度地保护您的隐私。我们<strong>不</strong>收集以下信息：
+                    </p>
+                    <ul>
+                        <li>您的浏览历史记录</li>
+                        <li>您的搜索查询</li>
+                        <li>您访问的网站</li>
+                        <li>您的个人身份信息，如姓名、电子邮件地址或IP地址（除非在法律要求下或您明确同意）</li>
+                        <li>您在网站上输入的内容</li>
+                    </ul>
+                    <h3>我们如何使用信息</h3>
+                    <p>
+                        我们收集的匿名信息仅用于以下目的：
+                    </p>
+                    <ul>
+                        <li>改进和优化未来浏览器的性能、稳定性和安全性。</li>
+                        <li>开发新功能和改进现有功能。</li>
+                        <li>理解和分析用户趋势（总计数据），以更好地服务用户。</li>
+                    </ul>
+                    <h3>信息共享与披露</h3>
+                    <p>
+                        我们不会出售、出租或以其他方式与第三方共享您的个人身份信息。我们可能在以下情况下披露非个人身份聚合数据：
+                    </p>
+                    <ul>
+                        <li><strong>服务提供商：</strong> 我们可能与信任的第三方服务提供商合作，他们为我们提供技术支持、分析服务等，并且他们被要求保护您的信息并仅按照我们的指示使用。</li>
+                        <li><strong>法律要求：</strong> 如果法律要求或为了遵守法律程序，我们可能披露信息。</li>
+                    </ul>
+                    <h3>您的权利</h3>
+                    <p>
+                        作为未来浏览器的用户，您拥有以下权利：
+                    </p>
+                    <ul>
+                        <li>访问和请求我们持有的关于您的任何非个人身份信息的副本。</li>
+                        <li>请求更正任何不准确的信息。</li>
+                        <li>请求删除您的信息（如果适用且可能）。</li>
+                    </ul>
+                    <h3>政策变更</h3>
+                    <p>
+                        我们可能会不时更新本隐私政策。任何更改都将在本页面发布，并通过浏览器内通知（如果适用）告知。建议您定期查看本页面以了解任何更新。
+                    </p>
+                    <h3>联系我们</h3>
+                    <p>
+                        如果您对本隐私政策有任何疑问，请通过 [您的支持邮箱，例如：support@futurebrowser.com] 与我们联系。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 服务条款区 -->
+    <section id="terms" class="py-12 md:py-16 bg-red-50 rounded-xl shadow-lg my-5">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <!-- 服务条款标题和切换按钮 -->
+            <button id="terms-toggle" class="w-full flex items-center justify-between text-4xl font-bold text-gray-900 mb-6 cursor-pointer bg-white p-6 rounded-lg shadow-md hover:bg-gray-100 transition-colors duration-300">
+                <span>服务条款</span>
+                <svg id="terms-icon" class="w-8 h-8 text-primary-red transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </button>
+            <!-- 服务条款内容 (初始隐藏) -->
+            <div id="terms-content" class="accordion-content max-h-0 overflow-hidden">
+                <div class="prose max-w-none text-gray-700 leading-relaxed text-lg pt-4 pb-4">
+                    <p>
+                        欢迎使用未来浏览器！这些服务条款（“条款”）管辖您对未来浏览器产品和服务的使用。使用未来浏览器即表示您同意遵守这些条款。如果您不同意这些条款，请勿使用未来浏览器。
+                    </p>
+                    <h3>接受条款</h3>
+                    <p>
+                        通过下载、安装或使用未来浏览器，您确认您已阅读、理解并同意受这些条款的约束。
+                    </p>
+                    <h3>许可证</h3>
+                    <p>
+                        我们授予您非独家、不可转让、可撤销的有限许可，允许您根据这些条款使用未来浏览器。所有未明确授予您的权利均由我们保留。
+                    </p>
+                    <h3>用户行为</h3>
+                    <p>
+                        您同意在使用未来浏览器时不会：
+                    </p>
+                    <ul>
+                        <li>从事任何非法活动或违反任何适用法律法规。</li>
+                        <li>干扰或破坏未来浏览器及其服务器或网络的正常运行。</li>
+                        <li>尝试未经授权访问未来浏览器的任何部分。</li>
+                        <li>分发病毒、恶意软件或任何其他有害代码。</li>
+                    </ul>
+                    <h3>免责声明</h3>
+                    <p>
+                        未来浏览器按“现状”和“现有”提供，不作任何明示或暗示的保证，包括但不限于适销性、特定用途适用性和不侵权的保证。我们不保证未来浏览器将无错误、不间断或安全。
+                    </p>
+                    <h3>责任限制</h3>
+                    <p>
+                        在适用法律允许的最大范围内，我们对因您使用未来浏览器而引起的或与之相关的任何间接、偶然、特殊、后果性或惩罚性损害不承担责任，即使我们已被告知发生此类损害的可能性。
+                    </p>
+                    <h3>第三方网站和内容</h3>
+                    <p>
+                        未来浏览器可能包含指向第三方网站或内容的链接。我们不对这些第三方网站或内容负责，您使用它们的风险由您自行承担。
+                    </p>
+                    <h3>终止</h3>
+                    <p>
+                        我们可以随时自行决定暂停或终止您对未来浏览器的访问，恕不另行通知，包括但不限于违反这些条款。
+                    </p>
+                    <h3>条款变更</h3>
+                    <p>
+                        我们保留随时修改或替换这些条款的权利。如果更改是实质性的，我们将在生效前至少提前30天通知您。在任何更改生效后继续使用未来浏览器即表示您同意受修订后的条款约束。
+                    </p>
+                    <h3>适用法律</h3>
+                    <p>
+                        这些条款受 [您的国家/地区，例如：中华人民共和国] 法律管辖和解释，不考虑其冲突法原则。
+                    </p>
+                    <h3>联系信息</h3>
+                    <p>
+                        如果您对这些服务条款有任何疑问，请通过 [您的支持邮箱，例如：support@futurebrowser.com] 与我们联系。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-800 text-white py-10 rounded-t-lg shadow-inner">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-6">
+                <div class="mb-4 md:mb-0">
+                    <a href="#" class="text-2xl font-bold hover:text-primary-red transition-colors duration-300">未来浏览器</a>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#privacy" class="text-gray-300 hover:text-primary-red transition-colors duration-300">隐私政策</a>
+                    <a href="#terms" class="text-gray-300 hover:text-primary-red transition-colors duration-300">服务条款</a>
+                    <a href="#" class="text-gray-300 hover:text-primary-red transition-colors duration-300">联系我们</a>
+                </div>
+            </div>
+            <p class="text-gray-400 text-sm">&copy; 2025 未来浏览器。保留所有权利。</p>
         </div>
     </footer>
-    
-    <!-- 固定浮動CTA按鈕 -->
-    <div class="floating-cta">
-        <a href="#section-13" class="cta-button bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold p-4 rounded-full shadow-xl flex items-center justify-center w-16 h-16 text-2xl">
-            <i class="fas fa-comments"></i>
-        </a>
-    </div>
 
     <script>
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        // 处理移动端菜单的JavaScript
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // 当点击菜单项时，隐藏菜单
+            mobileMenu.querySelectorAll('a').forEach(item => {
+                item.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+
+        // Accordion (风琴箱) 逻辑
+        function setupAccordion(toggleId, contentId, iconId) {
+            const toggleElement = document.getElementById(toggleId);
+            const contentElement = document.getElementById(contentId);
+            const iconElement = document.getElementById(iconId);
+
+            if (toggleElement && contentElement && iconElement) {
+                toggleElement.addEventListener('click', () => {
+                    if (contentElement.classList.contains('max-h-0')) {
+                        // 展开内容
+                        contentElement.classList.remove('max-h-0');
+                        contentElement.style.maxHeight = contentElement.scrollHeight + 'px'; // 设置实际高度以触发过渡
+                        iconElement.classList.add('rotate-180'); // 旋转箭头图标
+                        // 动画结束后，将maxHeight设为'auto'，以便内容动态调整
+                        contentElement.addEventListener('transitionend', function handler() {
+                            contentElement.style.maxHeight = 'auto';
+                            contentElement.removeEventListener('transitionend', handler);
+                        });
+                    } else {
+                        // 收起内容
+                        contentElement.style.maxHeight = contentElement.scrollHeight + 'px'; // 获取当前高度
+                        // 强制浏览器重绘，确保从当前高度开始过渡
+                        void contentElement.offsetWidth; 
+                        contentElement.style.maxHeight = '0'; // 过渡到0高度
+                        iconElement.classList.remove('rotate-180'); // 恢复箭头图标方向
+                        // 动画结束后，添加max-h-0以确保隐藏
+                        contentElement.addEventListener('transitionend', function handler() {
+                            contentElement.classList.add('max-h-0');
+                            contentElement.removeEventListener('transitionend', handler);
+                        });
+                    }
+                });
+            }
+        }
+
+        // 初始化隐私政策和条款服务风琴箱
+        setupAccordion('privacy-toggle', 'privacy-content', 'privacy-icon');
+        setupAccordion('terms-toggle', 'terms-content', 'terms-icon');
     </script>
 </body>
 </html>
-
