@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>未来浏览器 - 官方网站</title>
+    <title>速达浏览器 - 官方网站</title>
     <!-- 引入 Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- 引入 Font Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* 自定义 Tailwind 配置，包括 Inter 字体和红色主题 */
+        /* Custom Tailwind configuration, including Inter font and red theme */
         html {
-            scroll-behavior: smooth; /* 平滑滚动 */
+            scroll-behavior: smooth; /* Smooth scrolling */
         }
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8f8f8; /* 浅灰色背景 */
-            color: #333; /* 深灰色文本 */
+            background-color: #f8f8f8; /* Light gray background */
+            color: #333; /* Dark gray text */
         }
-        /* 定义主红色 */
+        /* Define primary red color */
         .text-primary-red {
             color: #ef4444; /* Tailwind red-500 */
         }
@@ -35,7 +35,7 @@
             color: #ef4444;
         }
 
-        /* 动画效果 */
+        /* Animation effects */
         .fade-in {
             opacity: 0;
             animation: fadeIn 1s ease-out forwards;
@@ -45,7 +45,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* 按钮阴影效果 */
+        /* Button shadow effect */
         .btn-shadow {
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
         }
@@ -64,27 +64,36 @@
             transform: translateY(20px);
             opacity: 0; /* Ensures content also fades with slide */
         }
+
+        /* Coming soon button style */
+        .btn-coming-soon {
+            background-color: #d1d5db; /* Tailwind gray-300 */
+            color: #4b5563; /* Tailwind gray-700 */
+            cursor: not-allowed;
+            box-shadow: none;
+            pointer-events: none; /* Make it non-clickable */
+        }
     </style>
 </head>
 <body class="antialiased">
-    <!-- 导航栏 -->
+    <!-- Navigation Bar -->
     <header class="bg-white shadow-lg sticky top-0 z-50 rounded-b-lg">
         <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
-            <!-- 标志/Logo -->
+            <!-- Brand/Logo -->
             <div class="flex items-center space-x-2">
                 <svg class="h-8 w-8 text-primary-red" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14.5c-2.48 0-4.5 2.02-4.5 4.5s2.02 4.5 4.5 4.5 4.5-2.02 4.5-4.5-2.02-4.5-4.5-4.5z"/>
                 </svg>
-                <a href="#" class="text-2xl font-bold text-gray-800">未来浏览器</a>
+                <a href="#" class="text-2xl font-bold text-gray-800">速达浏览器</a>
             </div>
-            <!-- 导航链接 -->
+            <!-- Nav Links -->
             <div class="hidden md:flex space-x-8">
                 <a href="#home" class="text-gray-600 hover:text-primary-red text-lg font-medium transition-colors duration-300">首页</a>
                 <a href="#features" class="text-gray-600 hover:text-primary-red text-lg font-medium transition-colors duration-300">功能</a>
                 <a href="#download" class="text-gray-600 hover:text-primary-red text-lg font-medium transition-colors duration-300">下载</a>
                 <a href="#about-us" class="text-gray-600 hover:text-primary-red text-lg font-medium transition-colors duration-300">关于我们</a>
             </div>
-            <!-- 移动端菜单按钮 -->
+            <!-- Mobile Menu Button -->
             <div class="md:hidden">
                 <button id="mobile-menu-button" class="text-gray-600 focus:outline-none focus:text-primary-red">
                     <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -93,7 +102,7 @@
                 </button>
             </div>
         </nav>
-        <!-- 移动端菜单内容 -->
+        <!-- Mobile Menu Content -->
         <div id="mobile-menu" class="md:hidden hidden bg-white py-2">
             <a href="#home" class="block px-6 py-3 text-gray-800 hover:bg-gray-100 transition-colors duration-300">首页</a>
             <a href="#features" class="block px-6 py-3 text-gray-800 hover:bg-gray-100 transition-colors duration-300">功能</a>
@@ -102,34 +111,36 @@
         </div>
     </header>
 
-    <!-- 主页/英雄区 -->
+    <!-- Home/Hero Section -->
     <section id="home" class="bg-gradient-to-r from-red-50 to-white py-20 md:py-32 text-center rounded-b-xl shadow-lg fade-in">
         <div class="container mx-auto px-6 max-w-4xl">
             <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
                 发现 <span class="text-primary-red">更安全</span>、<span class="text-primary-red">更快速</span>、<span class="text-primary-red">更智能</span> 的浏览体验
             </h1>
             <p class="text-lg md:text-xl text-gray-700 mb-10 leading-relaxed">
-                未来浏览器致力于提供卓越的隐私保护、闪电般的加载速度和直观的用户界面，让您的上网体验前所未有。
+                速达浏览器致力于提供卓越的隐私保护、闪电般的加载速度和直观的用户界面，让您的上网体验前所未有。
             </p>
             <a href="#download" class="inline-block bg-primary-red text-white text-xl font-semibold py-4 px-10 rounded-full hover:bg-red-600 transition-all duration-300 transform hover:scale-105 btn-shadow">
                 立即免费下载
             </a>
             <div class="mt-12">
-                <!-- 示意图或浏览器截图的占位符 -->
-                <img src="https://placehold.co/800x450/e0e0e0/555555?text=未来浏览器界面示意图" alt="未来浏览器界面示意图" class="mx-auto rounded-lg shadow-xl border border-gray-200">
+                <!-- Browser mockup image -->
+                <img src="https://placehold.co/800x450/e0e0e0/555555?text=速达浏览器界面示意图"
+                     onerror="this.onerror=null;this.src='https://placehold.co/800x450/e0e0e0/555555?text=图片加载失败';"
+                     alt="速达浏览器界面示意图" class="mx-auto rounded-lg shadow-xl border border-gray-200">
             </div>
         </div>
     </section>
 
-    <!-- 功能区 -->
+    <!-- Features Section -->
     <section id="features" class="py-16 md:py-24 bg-white rounded-xl shadow-lg my-10">
         <div class="container mx-auto px-6">
             <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">
                 核心功能
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <!-- 功能卡片 1：隐私保护 -->
-                <div class="bg-gray-50 p-8 rounded-xl shadow-md border-t-4 border-primary-red transform hover:scale-105 transition-transform duration-300">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Feature Card 1: Enhanced Privacy Protection - spans two columns -->
+                <div class="md:col-span-2 bg-gray-50 p-8 rounded-xl shadow-md border-t-4 border-primary-red transform hover:scale-105 transition-transform duration-300">
                     <div class="text-primary-red mb-4">
                         <svg class="h-10 w-10" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 19.7c-3.9-.9-7-4.17-7-8.7V6.3l7-3.1 7 3.1v5.7c0 4.53-3.1 7.8-7 8.7zM15.5 12H14V9.5h-3V12H8.5l3.5 3.5 3.5-3.5z"/>
@@ -143,7 +154,7 @@
                     </p>
                 </div>
 
-                <!-- 功能卡片 2：极速体验 -->
+                <!-- Feature Card 2: Lightning-Fast Speed -->
                 <div class="bg-gray-50 p-8 rounded-xl shadow-md border-t-4 border-primary-red transform hover:scale-105 transition-transform duration-300">
                     <div class="text-primary-red mb-4">
                         <svg class="h-10 w-10" fill="currentColor" viewBox="0 0 24 24">
@@ -158,22 +169,7 @@
                     </p>
                 </div>
 
-                <!-- 功能卡片 3：智能工具 -->
-                <div class="bg-gray-50 p-8 rounded-xl shadow-md border-t-4 border-primary-red transform hover:scale-105 transition-transform duration-300">
-                    <div class="text-primary-red mb-4">
-                        <svg class="h-10 w-10" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM10 4h4v2h-4V4zm10 15H4V8h16v11z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">
-                        智能内置工具
-                    </h3>
-                    <p class="text-gray-700">
-                        集成翻译、截图和密码管理器等实用工具，提升您的工作效率。
-                    </p>
-                </div>
-
-                <!-- 功能卡片 4：跨平台同步 -->
+                <!-- Feature Card 3: Seamless Cross-Platform Sync -->
                 <div class="bg-gray-50 p-8 rounded-xl shadow-md border-t-4 border-primary-red transform hover:scale-105 transition-transform duration-300">
                     <div class="text-primary-red mb-4">
                         <svg class="h-10 w-10" fill="currentColor" viewBox="0 0 24 24">
@@ -188,22 +184,22 @@
                     </p>
                 </div>
 
-                <!-- 功能卡片 5：可定制界面 -->
+                <!-- New Feature Card: Smart VPN Tunnel -->
                 <div class="bg-gray-50 p-8 rounded-xl shadow-md border-t-4 border-primary-red transform hover:scale-105 transition-transform duration-300">
                     <div class="text-primary-red mb-4">
                         <svg class="h-10 w-10" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 16c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7zm-1-8V7h2v4h4v2h-4v4h-2v-4H7v-2h4z"/>
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-8V7h2v4h4v2h-4v4h-2v-4H7v-2h4z"/>
                         </svg>
                     </div>
                     <h3 class="text-2xl font-semibold text-gray-800 mb-4">
-                        高度可定制界面
+                        智能VPN隧道
                     </h3>
                     <p class="text-gray-700">
-                        提供多样化的主题、扩展和设置，个性化您的浏览器外观和功能。
+                        内置智能VPN隧道，保护您的在线隐私和安全，访问全球内容。
                     </p>
                 </div>
 
-                <!-- 功能卡片 6：节能模式 -->
+                <!-- Feature Card 5: Smart Power Saving Mode -->
                 <div class="bg-gray-50 p-8 rounded-xl shadow-md border-t-4 border-primary-red transform hover:scale-105 transition-transform duration-300">
                     <div class="text-primary-red mb-4">
                         <svg class="h-10 w-10" fill="currentColor" viewBox="0 0 24 24">
@@ -221,58 +217,64 @@
         </div>
     </section>
 
-    <!-- 下载区 -->
+    <!-- Download Section -->
     <section id="download" class="py-16 md:py-24 bg-primary-red text-white rounded-xl shadow-lg my-10">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold mb-8">立即下载未来浏览器</h2>
+            <h2 class="text-4xl font-bold mb-8">立即下载速达浏览器</h2>
             <p class="text-lg mb-12 max-w-2xl mx-auto">
                 选择您的操作系统，开始体验更安全、更快速、更智能的上网之旅。
             </p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-                <!-- Windows 下载 -->
-                <div class="bg-white text-gray-800 p-8 rounded-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
+                <!-- Windows Download -->
+                <div class="bg-white text-gray-800 p-8 rounded-lg shadow-xl">
                     <img src="https://placehold.co/80x80/ef4444/ffffff?text=Win" alt="Windows Logo" class="mx-auto mb-4">
                     <h3 class="text-2xl font-semibold mb-4">Windows</h3>
                     <p class="mb-6">兼容 Windows 10/11</p>
-                    <a href="#" class="inline-block bg-primary-red text-white text-lg font-semibold py-3 px-8 rounded-full hover:bg-red-600 transition-colors duration-300 btn-shadow">
-                        下载 (64位)
-                    </a>
+                    <span class="inline-block btn-coming-soon text-lg font-semibold py-3 px-8 rounded-full">
+                        尽情期待
+                    </span>
                 </div>
-                <!-- macOS 下载 -->
-                <div class="bg-white text-gray-800 p-8 rounded-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+                <!-- macOS Download -->
+                <div class="bg-white text-gray-800 p-8 rounded-lg shadow-xl">
                     <img src="https://placehold.co/80x80/ef4444/ffffff?text=Mac" alt="macOS Logo" class="mx-auto mb-4">
                     <h3 class="text-2xl font-semibold mb-4">macOS</h3>
                     <p class="mb-6">兼容 macOS 10.15+</p>
-                    <a href="#" class="inline-block bg-primary-red text-white text-lg font-semibold py-3 px-8 rounded-full hover:bg-red-600 transition-colors duration-300 btn-shadow">
-                        下载 (ARM/Intel)
+                    <span class="inline-block btn-coming-soon text-lg font-semibold py-3 px-8 rounded-full">
+                        尽情期待
+                    </span>
+                </div>
+                <!-- iOS Download -->
+                <div class="bg-white text-gray-800 p-8 rounded-lg shadow-xl">
+                    <img src="https://placehold.co/80x80/ef4444/ffffff?text=iOS" alt="iOS Logo" class="mx-auto mb-4">
+                    <h3 class="text-2xl font-semibold mb-4">iOS</h3>
+                    <p class="mb-6">即将登陆 App Store</p>
+                    <a href="https://apps.apple.com/cn/app/%E7%99%BE%E5%BA%A6%E6%B5%8F%E8%A7%88%E5%99%A8/id789634484" target="_blank" class="inline-block bg-primary-red text-white text-lg font-semibold py-3 px-8 rounded-full hover:bg-red-600 transition-colors duration-300 btn-shadow">
+                        立即下载
                     </a>
                 </div>
-                <!-- Linux 下载 -->
-                <div class="bg-white text-gray-800 p-8 rounded-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
-                    <img src="https://placehold.co/80x80/ef4444/ffffff?text=Linux" alt="Linux Logo" class="mx-auto mb-4">
-                    <h3 class="text-2xl font-semibold mb-4">Linux</h3>
-                    <p class="mb-6">适用于 Debian/Ubuntu</p>
-                    <a href="#" class="inline-block bg-primary-red text-white text-lg font-semibold py-3 px-8 rounded-full hover:bg-red-600 transition-colors duration-300 btn-shadow">
-                        下载 (.deb)
+                <!-- Android Download -->
+                <div class="bg-white text-gray-800 p-8 rounded-lg shadow-xl">
+                    <img src="https://placehold.co/80x80/ef4444/ffffff?text=Android" alt="Android Logo" class="mx-auto mb-4">
+                    <h3 class="text-2xl font-semibold mb-4">Android</h3>
+                    <p class="mb-6">即将登陆 Google Play</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.UCMobile.intl&hl=zh" target="_blank" class="inline-block bg-primary-red text-white text-lg font-semibold py-3 px-8 rounded-full hover:bg-red-600 transition-colors duration-300 btn-shadow">
+                        立即下载
                     </a>
                 </div>
             </div>
-            <p class="mt-12 text-sm opacity-90">
-                未来浏览器也将在 iOS 和 Android 平台推出。敬请期待！
-            </p>
         </div>
     </section>
 
-    <!-- 关于我们按钮区域 -->
+    <!-- About Us Section -->
     <section id="about-us" class="py-8 md:py-10 bg-white rounded-xl shadow-lg my-5">
         <div class="container mx-auto px-6 max-w-5xl">
             <h2 class="text-4xl font-bold text-center text-gray-900 mb-8">关于我们</h2>
             <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <!-- 隐私政策按钮 -->
+                <!-- Privacy Policy Button -->
                 <button id="privacy-policy-open-modal" class="flex-1 flex items-center justify-center text-xl font-bold text-gray-900 cursor-pointer bg-white p-5 rounded-lg shadow-md hover:bg-gray-100 transition-colors duration-300 border-b-2 border-primary-red">
                     <span>隐私政策</span>
                 </button>
-                <!-- 服务条款按钮 -->
+                <!-- Terms of Service Button -->
                 <button id="terms-of-service-open-modal" class="flex-1 flex items-center justify-center text-xl font-bold text-gray-900 cursor-pointer bg-white p-5 rounded-lg shadow-md hover:bg-gray-100 transition-colors duration-300 border-b-2 border-primary-red">
                     <span>服务条款</span>
                 </button>
@@ -280,35 +282,35 @@
         </div>
     </section>
 
-    <!-- 法律信息弹出层 -->
+    <!-- Legal Info Modal -->
     <div id="info-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden p-4">
         <div class="bg-white rounded-lg shadow-2xl p-6 md:p-8 w-full max-w-2xl lg:max-w-3xl max-h-[90vh] overflow-y-auto relative">
             <button id="modal-close-button" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-3xl font-bold leading-none focus:outline-none">&times;</button>
             <h3 id="modal-title" class="text-3xl font-bold text-gray-900 mb-6"></h3>
             <div id="modal-content-area" class="prose max-w-none text-gray-700 leading-relaxed text-lg">
-                <!-- 内容将由 JavaScript 注入 -->
+                <!-- Content will be injected by JavaScript -->
             </div>
         </div>
     </div>
 
-    <!-- 页脚 -->
+    <!-- Footer -->
     <footer class="bg-gray-800 text-white py-10 rounded-t-lg shadow-inner">
         <div class="container mx-auto px-6 text-center">
             <div class="flex flex-col md:flex-row justify-between items-center mb-6">
                 <div class="mb-4 md:mb-0">
-                    <a href="#" class="text-2xl font-bold hover:text-primary-red transition-colors duration-300">未来浏览器</a>
+                    <a href="#" class="text-2xl font-bold hover:text-primary-red transition-colors duration-300">速达浏览器</a>
                 </div>
                 <div class="flex space-x-6">
                     <a href="?show=privacy" class="text-gray-300 hover:text-primary-red transition-colors duration-300">隐私政策</a>
                     <a href="?show=terms" class="text-gray-300 hover:text-primary-red transition-colors duration-300">服务条款</a>
                 </div>
             </div>
-            <p class="text-gray-400 text-sm">&copy; 2025 未来浏览器。保留所有权利。</p>
+            <p class="text-gray-400 text-sm">&copy; 2025 速达浏览器。保留所有权利。</p>
         </div>
     </footer>
 
     <script>
-        // 处理移动端菜单的JavaScript
+        // JavaScript for handling mobile menu
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
@@ -317,7 +319,7 @@
                 mobileMenu.classList.toggle('hidden');
             });
 
-            // 当点击菜单项时，隐藏菜单
+            // Hide menu when a menu item is clicked
             mobileMenu.querySelectorAll('a').forEach(item => {
                 item.addEventListener('click', () => {
                     mobileMenu.classList.add('hidden');
@@ -325,22 +327,22 @@
             });
         }
 
-        // 法律信息内容（HTML字符串）
+        // Legal information content (HTML strings)
         const privacyPolicyContent = `
             <p>
-                未来浏览器（“我们”、“我们的”）致力于保护您的隐私。本隐私政策解释了当您使用我们的浏览器产品和服务时，我们如何收集、使用、披露和保护您的信息。
+                速达浏览器（“我们”、“我们的”）致力于保护您的隐私。本隐私政策解释了当您使用我们的浏览器产品和服务时，我们如何收集、使用、披露和保护您的信息。
             </p>
             <h3>我们收集的信息</h3>
             <p>
-                当您使用未来浏览器时，我们不会收集您的个人身份信息，除非您明确选择与我们共享这些信息（例如，通过报告问题或参与可选的调查）。我们可能收集非个人身份信息，例如：
+                当您使用速达浏览器时，我们不会收集您的个人身份信息，除非您明确选择与我们共享这些信息（例如，通过报告问题或参与可选的调查）。我们可能收集非个人身份信息，例如：
             </p>
             <ul>
-                <li><strong>技术数据：</strong> 您的设备类型、操作系统版本、浏览器版本（仅限未来浏览器版本）、崩溃报告（匿名化，不包含个人数据）。</li>
+                <li><strong>技术数据：</strong> 您的设备类型、操作系统版本、浏览器版本（仅限速达浏览器版本）、崩溃报告（匿名化，不包含个人数据）。</li>
                 <li><strong>使用数据：</strong> 匿名化的功能使用统计，旨在改进浏览器性能和用户体验。这些数据无法追溯到任何特定用户。</li>
             </ul>
             <h3>我们不收集的信息</h3>
             <p>
-                未来浏览器设计旨在最大程度地保护您的隐私。我们<strong>不</strong>收集以下信息：
+                速达浏览器设计旨在最大程度地保护您的隐私。我们<strong>不</strong>收集以下信息：
             </p>
             <ul>
                 <li>您的浏览历史记录</li>
@@ -354,7 +356,7 @@
                 我们收集的匿名信息仅用于以下目的：
             </p>
             <ul>
-                <li>改进和优化未来浏览器的性能、稳定性和安全性。</li>
+                <li>改进和优化速达浏览器的性能、稳定性和安全性。</li>
                 <li>开发新功能和改进现有功能。</li>
                 <li>理解和分析用户趋势（总计数据），以更好地服务用户。</li>
             </ul>
@@ -368,7 +370,7 @@
             </ul>
             <h3>您的权利</h3>
             <p>
-                作为未来浏览器的用户，您拥有以下权利：
+                作为速达浏览器的用户，您拥有以下权利：
             </p>
             <ul>
                 <li>访问和请求我们持有的关于您的任何非个人身份信息的副本。</li>
@@ -387,45 +389,45 @@
 
         const termsOfServiceContent = `
             <p>
-                欢迎使用未来浏览器！这些服务条款（“条款”）管辖您对未来浏览器产品和服务的使用。使用未来浏览器即表示您同意遵守这些条款。如果您不同意这些条款，请勿使用未来浏览器。
+                欢迎使用速达浏览器！这些服务条款（“条款”）管辖您对速达浏览器产品和服务的使用。使用速达浏览器即表示您同意遵守这些条款。如果您不同意这些条款，请勿使用速达浏览器。
             </p>
             <h3>接受条款</h3>
             <p>
-                通过下载、安装或使用未来浏览器，您确认您已阅读、理解并同意受这些条款的约束。
+                通过下载、安装或使用速达浏览器，您确认您已阅读、理解并同意受这些条款的约束。
             </p>
             <h3>许可证</h3>
             <p>
-                我们授予您非独家、不可转让、可撤销的有限许可，允许您根据这些条款使用未来浏览器。所有未明确授予您的权利均由我们保留。
+                我们授予您非独家、不可转让、可撤销的有限许可，允许您根据这些条款使用速达浏览器。所有未明确授予您的权利均由我们保留。
             </p>
             <h3>用户行为</h3>
             <p>
-                您同意在使用未来浏览器时不会：
+                您同意在使用速达浏览器时不会：
             </p>
             <ul>
                 <li>从事任何非法活动或违反任何适用法律法规。</li>
-                <li>干扰或破坏未来浏览器及其服务器或网络的正常运行。</li>
-                <li>尝试未经授权访问未来浏览器的任何部分。</li>
+                <li>干扰或破坏速达浏览器及其服务器或网络的正常运行。</li>
+                <li>尝试未经授权访问速达浏览器的任何部分。</li>
                 <li>分发病毒、恶意软件或任何其他有害代码。</li>
             </ul>
             <h3>免责声明</h3>
             <p>
-                未来浏览器按“现状”和“现有”提供，不作任何明示或暗示的保证，包括但不限于适销性、特定用途适用性和不侵权的保证。我们不保证未来浏览器将无错误、不间断或安全。
+                速达浏览器按“现状”和“现有”提供，不作任何明示或暗示的保证，包括但不限于适销性、特定用途适用性和不侵权的保证。我们不保证速达浏览器将无错误、不间断或安全。
             </p>
             <h3>责任限制</h3>
             <p>
-                在适用法律允许的最大范围内，我们对因您使用未来浏览器而引起的或与之相关的任何间接、偶然、特殊、后果性或惩罚性损害不承担责任，即使我们已被告知发生此类损害的可能性。
+                在适用法律允许的最大范围内，我们对因您使用速达浏览器而引起的或与之相关的任何间接、偶然、特殊、后果性或惩罚性损害不承担责任，即使我们已被告知发生此类损害的可能性。
             </p>
             <h3>第三方网站和内容</h3>
             <p>
-                未来浏览器可能包含指向第三方网站或内容的链接。我们不对这些第三方网站或内容负责，您使用它们的风险由您自行承担。
+                速达浏览器可能包含指向第三方网站或内容的链接。我们不对这些第三方网站或内容负责，您使用它们的风险由您自行承担。
             </p>
             <h3>终止</h3>
             <p>
-                我们可以随时自行决定暂停或终止您对未来浏览器的访问，恕不另行通知，包括但不限于违反这些条款。
+                我们可以随时自行决定暂停或终止您对速达浏览器的访问，恕不另行通知，包括但不限于违反这些条款。
             </p>
             <h3>条款变更</h3>
             <p>
-                我们保留随时修改或替换这些条款的权利。如果更改是实质性的，我们将在生效前至少提前30天通知您。在任何更改生效后继续使用未来浏览器即表示您同意受修订后的条款约束。
+                我们保留随时修改或替换这些条款的权利。如果更改是实质性的，我们将在生效前至少提前30天通知您。在任何更改生效后继续使用速达浏览器即表示您同意受修订后的条款约束。
             </p>
             <h3>适用法律</h3>
             <p>
@@ -437,7 +439,7 @@
             </p>
         `;
 
-        // 获取 DOM 元素
+        // Get DOM elements
         const privacyPolicyButton = document.getElementById('privacy-policy-open-modal');
         const termsOfServiceButton = document.getElementById('terms-of-service-open-modal');
         const infoModal = document.getElementById('info-modal');
@@ -447,7 +449,7 @@
         const modalContentDiv = infoModal.querySelector('div'); // Get the inner content div
 
 
-        // 显示模态框函数
+        // Function to show modal
         function showModal(title, content) {
             modalTitle.textContent = title;
             modalContentArea.innerHTML = content;
@@ -477,7 +479,7 @@
             });
         }
 
-        // 隐藏模态框函数
+        // Function to hide modal
         function hideModal() {
             // 1. Set the 'leave' state (this will trigger the transition *to* 'modal-leave-to' state)
             infoModal.classList.remove('modal-enter-active');
@@ -504,7 +506,7 @@
             infoModal.addEventListener('transitionend', onTransitionEnd);
         }
 
-        // 绑定事件监听器
+        // Attach event listeners
         if (privacyPolicyButton) {
             privacyPolicyButton.addEventListener('click', () => {
                 showModal('隐私政策', privacyPolicyContent);
@@ -521,17 +523,17 @@
             modalCloseButton.addEventListener('click', hideModal);
         }
 
-        // 点击模态框背景关闭
+        // Close modal when clicking outside content area
         if (infoModal) {
             infoModal.addEventListener('click', (event) => {
-                // 如果点击的是模态框本身而不是内容区域，则关闭
+                // If the click is on the modal itself and not the content area, close it
                 if (event.target === infoModal) {
                     hideModal();
                 }
             });
         }
 
-        // --- 新增代码：页面加载时检查 URL 参数以打开弹出层 ---
+        // --- New code: Check URL parameters on page load to open modal ---
         document.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);
             const showModalParam = urlParams.get('show');
@@ -543,7 +545,7 @@
             }
         });
 
-        // 更新导航栏链接，指向新的关于我们 section
+        // Update navigation links to point to the new 'about-us' section
         const aboutUsNavLinkDesktop = document.querySelector('header nav .hidden.md\\:flex a[href="#legal"]');
         if (aboutUsNavLinkDesktop) {
             aboutUsNavLinkDesktop.setAttribute('href', '#about-us'); // Update href to match new section ID
