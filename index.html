@@ -71,7 +71,14 @@
             color: #4b5563; /* Tailwind gray-700 */
             cursor: not-allowed;
             box-shadow: none;
-            pointer-events: none; /* Make it non-clickable */
+        }
+        /* Ensure consistent height for all buttons */
+        .download-button {
+            height: 52px; /* A fixed height that looks good with py-3 and text-lg */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%; /* Make button span full width of its container */
         }
     </style>
 </head>
@@ -81,9 +88,7 @@
         <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
             <!-- Brand/Logo -->
             <div class="flex items-center space-x-2">
-                <svg class="h-8 w-8 text-primary-red" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14.5c-2.48 0-4.5 2.02-4.5 4.5s2.02 4.5 4.5 4.5 4.5-2.02 4.5-4.5-2.02-4.5-4.5-4.5z"/>
-                </svg>
+                <img src="https://suda.pw/picResource/logo-1%E7%99%BD%E5%BA%95@1024.jpg" onerror="this.onerror=null;this.src='https://placehold.co/32x32/ef4444/ffffff?text=Logo';" alt="速达浏览器 Logo" class="h-8 w-8 rounded-full">
                 <a href="#" class="text-2xl font-bold text-gray-800">速达浏览器</a>
             </div>
             <!-- Nav Links -->
@@ -224,40 +229,22 @@
             <p class="text-lg mb-12 max-w-2xl mx-auto">
                 选择您的操作系统，开始体验更安全、更快速、更智能的上网之旅。
             </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
-                <!-- Windows Download -->
-                <div class="bg-white text-gray-800 p-8 rounded-lg shadow-xl">
-                    <img src="https://placehold.co/80x80/ef4444/ffffff?text=Win" alt="Windows Logo" class="mx-auto mb-4">
-                    <h3 class="text-2xl font-semibold mb-4">Windows</h3>
-                    <p class="mb-6">兼容 Windows 10/11</p>
-                    <span class="inline-block btn-coming-soon text-lg font-semibold py-3 px-8 rounded-full">
-                        尽情期待
-                    </span>
-                </div>
-                <!-- macOS Download -->
-                <div class="bg-white text-gray-800 p-8 rounded-lg shadow-xl">
-                    <img src="https://placehold.co/80x80/ef4444/ffffff?text=Mac" alt="macOS Logo" class="mx-auto mb-4">
-                    <h3 class="text-2xl font-semibold mb-4">macOS</h3>
-                    <p class="mb-6">兼容 macOS 10.15+</p>
-                    <span class="inline-block btn-coming-soon text-lg font-semibold py-3 px-8 rounded-full">
-                        尽情期待
-                    </span>
-                </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-xl mx-auto">
                 <!-- iOS Download -->
                 <div class="bg-white text-gray-800 p-8 rounded-lg shadow-xl">
-                    <img src="https://placehold.co/80x80/ef4444/ffffff?text=iOS" alt="iOS Logo" class="mx-auto mb-4">
+                    <img src="https://suda.pw/picResource/Apple_logo/pingguo.png" onerror="this.onerror=null;this.src='https://placehold.co/80x80/ef4444/ffffff?text=iOS';" alt="iOS Logo" class="mx-auto mb-4 h-20 w-20">
                     <h3 class="text-2xl font-semibold mb-4">iOS</h3>
-                    <p class="mb-6">即将登陆 App Store</p>
-                    <a href="https://apps.apple.com/cn/app/%E7%99%BE%E5%BA%A6%E6%B5%8F%E8%A7%88%E5%99%A8/id789634484" target="_blank" class="inline-block bg-primary-red text-white text-lg font-semibold py-3 px-8 rounded-full hover:bg-red-600 transition-colors duration-300 btn-shadow">
+                    <p class="mb-6">已登陆<br>App Store</p>
+                    <a href="https://apps.apple.com/cn/app/%E7%99%BE%E5%BA%A6%E6%B5%8F%E8%A7%88%E5%99%A8/id789634484" target="_blank" class="inline-block bg-primary-red text-white text-lg font-semibold py-3 px-8 rounded-full hover:bg-red-600 transition-colors duration-300 btn-shadow download-button">
                         立即下载
                     </a>
                 </div>
                 <!-- Android Download -->
                 <div class="bg-white text-gray-800 p-8 rounded-lg shadow-xl">
-                    <img src="https://placehold.co/80x80/ef4444/ffffff?text=Android" alt="Android Logo" class="mx-auto mb-4">
+                    <img src="https://suda.pw/picResource/Android_logo/ai-app-2.png" onerror="this.onerror=null;this.src='https://placehold.co/80x80/ef4444/ffffff?text=Android';" alt="Android Logo" class="mx-auto mb-4 h-20 w-20">
                     <h3 class="text-2xl font-semibold mb-4">Android</h3>
-                    <p class="mb-6">即将登陆 Google Play</p>
-                    <a href="https://play.google.com/store/apps/details?id=com.UCMobile.intl&hl=zh" target="_blank" class="inline-block bg-primary-red text-white text-lg font-semibold py-3 px-8 rounded-full hover:bg-red-600 transition-colors duration-300 btn-shadow">
+                    <p class="mb-6">已登陆<br>Google Play</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.UCMobile.intl&hl=zh" target="_blank" class="inline-block bg-primary-red text-white text-lg font-semibold py-3 px-8 rounded-full hover:bg-red-600 transition-colors duration-300 btn-shadow download-button">
                         立即下载
                     </a>
                 </div>
@@ -283,7 +270,7 @@
     </section>
 
     <!-- Legal Info Modal -->
-    <div id="info-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden p-4">
+    <div id="info-modal" class="fixed inset-0 bg-black bg-opacity50 flex items-center justify-center z-50 hidden p-4">
         <div class="bg-white rounded-lg shadow-2xl p-6 md:p-8 w-full max-w-2xl lg:max-w-3xl max-h-[90vh] overflow-y-auto relative">
             <button id="modal-close-button" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-3xl font-bold leading-none focus:outline-none">&times;</button>
             <h3 id="modal-title" class="text-3xl font-bold text-gray-900 mb-6"></h3>
@@ -381,10 +368,7 @@
             <p>
                 我们可能会不时更新本隐私政策。任何更改都将在本页面发布，并通过浏览器内通知（如果适用）告知。建议您定期查看本页面以了解任何更新。
             </p>
-            <h3>联系我们</h3>
-            <p>
-                如果您对本隐私政策有任何疑问，请通过 [您的支持邮箱，例如：support@futurebrowser.com] 与我们联系。
-            </p>
+          
         `;
 
         const termsOfServiceContent = `
@@ -433,10 +417,7 @@
             <p>
                 这些条款受 [您的国家/地区，例如：中华人民共和国] 法律管辖和解释，不考虑其冲突法原则。
             </p>
-            <h3>联系信息</h3>
-            <p>
-                如果您对这些服务条款有任何疑问，请通过 [您的支持邮箱，例如：support@futurebrowser.com] 与我们联系。
-            </p>
+        
         `;
 
         // Get DOM elements
