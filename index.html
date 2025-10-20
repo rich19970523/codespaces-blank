@@ -502,11 +502,20 @@
             langSwitcherMobile.addEventListener('click', handleLangSwitch);
             
             // Initial language detection
-            const initialLang = localStorage.getItem('suda-lang') || (navigator.language.startsWith('en') ? 'en-US' : 'zh-CN');
+            const urlParams = new URLSearchParams(window.location.search);
+            const langParam = urlParams.get('lang');
+
+            let initialLang;
+            if (langParam && (langParam.toLowerCase() === 'en' || langParam.toLowerCase() === 'en-us')) {
+                initialLang = 'en-US';
+            } else if (langParam && (langParam.toLowerCase() === 'zh' || langParam.toLowerCase() === 'zh-cn')) {
+                initialLang = 'zh-CN';
+            } else {
+                initialLang = localStorage.getItem('suda-lang') || (navigator.language.startsWith('en') ? 'en-US' : 'zh-CN');
+            }
             setLanguage(initialLang);
 
              // Check URL parameters on page load to open modal, AFTER setting language
-            const urlParams = new URLSearchParams(window.location.search);
             const showModalParam = urlParams.get('show');
             if (showModalParam === 'privacy') {
                 showModal(getNestedTranslation(currentLang, 'modal.privacy.title'), getNestedTranslation(currentLang, 'modal.privacy.content'));
