@@ -501,18 +501,31 @@
             langSwitcherDesktop.addEventListener('click', handleLangSwitch);
             langSwitcherMobile.addEventListener('click', handleLangSwitch);
             
-            // Initial language detection
+            // Initial language detection (Robust Version)
             const urlParams = new URLSearchParams(window.location.search);
-            const langParam = urlParams.get('lang');
+            const langParam = urlParams.get('lang')?.toLowerCase();
 
-            let initialLang;
-            if (langParam && (langParam.toLowerCase() === 'en' || langParam.toLowerCase() === 'en-us')) {
+            let initialLang = 'zh-CN'; // Start with a safe default
+
+            // Priority 1: Check for a valid URL parameter
+            if (langParam === 'en' || langParam === 'en-us') {
                 initialLang = 'en-US';
-            } else if (langParam && (langParam.toLowerCase() === 'zh' || langParam.toLowerCase() === 'zh-cn')) {
+            } else if (langParam === 'zh' || langParam === 'zh-cn') {
                 initialLang = 'zh-CN';
             } else {
-                initialLang = localStorage.getItem('suda-lang') || (navigator.language.startsWith('en') ? 'en-US' : 'zh-CN');
+                // Priority 2: Check for a valid value in local storage
+                const storedLang = localStorage.getItem('suda-lang');
+                if (storedLang === 'en-US' || storedLang === 'zh-CN') {
+                    initialLang = storedLang;
+                } else {
+                    // Priority 3: Fallback to browser language
+                    if (navigator.language.startsWith('en')) {
+                        initialLang = 'en-US';
+                    }
+                    // If none of the above, the default 'zh-CN' is used
+                }
             }
+            
             setLanguage(initialLang);
 
              // Check URL parameters on page load to open modal, AFTER setting language
